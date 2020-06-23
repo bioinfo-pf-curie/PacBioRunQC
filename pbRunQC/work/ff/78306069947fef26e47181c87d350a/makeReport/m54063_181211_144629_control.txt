@@ -1,1 +1,0 @@
-/bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/02/9535733968b307984484d92abe3333/m54063_181211_144629_control.txt

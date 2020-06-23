@@ -1,1 +1,0 @@
-/data/kdi_prod/.kdi/dataset_archive_0/2008016/archive/m54063_181212_010613/m54063_181212_010613.subreads.bam.pbi

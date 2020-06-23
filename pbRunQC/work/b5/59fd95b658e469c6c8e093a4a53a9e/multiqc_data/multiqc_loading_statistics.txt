@@ -1,2 +1,0 @@
-Sample	Productive_ZMWs	Productivity_0	P0	Productivity_1	P1	Productivity_2	P2
-m54063_181211_144629	1009609.0	229107.0	22.693	498841.0	49.409	290398.0	28.763

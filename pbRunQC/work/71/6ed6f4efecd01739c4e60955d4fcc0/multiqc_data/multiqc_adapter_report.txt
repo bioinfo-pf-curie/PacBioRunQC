@@ -1,4 +1,0 @@
-Sample	Adapter_Dimers	Short_Inserts	Local_Base_Rate
-1_A01	0.0	0.0	2.74059
-2_B01	0.0	0.0	2.74376
-3_C01	0.0	0.0	2.87234

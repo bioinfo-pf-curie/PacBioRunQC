@@ -1,3 +1,0 @@
-Sample	_Polymerase_Read_Bases	_Polymerase_Reads	_Polymerase_Read_Length	_Polymerase_Read_N50	_Subread_Length	_Subread_N50	_Insert_N50	_Insert_Length_subread_mean	_Unique_Molecular_Yield
-1_A01	19327327.0	490.0	39444.0	73864.0	1470.0	2114.0	3050.0	2571.0	0.001068352
-2_B01	21968510.0	576.0	38140.0	70417.0	1578.0	2091.0	3118.0	2694.0	0.001277704

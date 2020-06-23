@@ -1,9 +1,0 @@
-1) what is assets/metadata.tsv ?
-2) what is assets/oncomplete_template.txt ?
-3) check "bin/scrape_software_versions.py" is util? yes
-4) see bin/multiqc.sh , How add to mqc_header?
-5) do we need "CMakeLists.txt" ? Non
-6) I removed "conf/tools-path.config.example" and folder "utils" : see if need conda for multiqc
-7) put small data and put in "test.config" DONE 
-8) see resource here : conf/base.config OK
-
