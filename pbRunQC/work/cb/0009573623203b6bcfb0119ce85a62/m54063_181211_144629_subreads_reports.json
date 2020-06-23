@@ -1,0 +1,55 @@
+{
+    "createdAt": "2020-06-23T16:39:30",
+    "files": [
+        {
+            "createdAt": "2020-06-23T16:39:29",
+            "description": "",
+            "fileSize": 4542,
+            "fileTypeId": "PacBio.FileTypes.JsonReport",
+            "isChunked": false,
+            "modifiedAt": "2020-06-23T16:39:29",
+            "name": "filter_stats_xml",
+            "path": "/bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/cb/0009573623203b6bcfb0119ce85a62/filter_stats_xml/filter_stats_xml.json",
+            "sourceId": "pbreports.tasks.filter_stats_report_xml",
+            "uniqueId": "48ab3385-ac1f-47f8-b6fa-acd18940a3a1"
+        },
+        {
+            "createdAt": "2020-06-23T16:39:29",
+            "description": "",
+            "fileSize": 851,
+            "fileTypeId": "PacBio.FileTypes.JsonReport",
+            "isChunked": false,
+            "modifiedAt": "2020-06-23T16:39:29",
+            "name": "adapter_xml",
+            "path": "/bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/cb/0009573623203b6bcfb0119ce85a62/adapter_xml/adapter_xml.json",
+            "sourceId": "pbreports.tasks.adapter_report_xml",
+            "uniqueId": "9728d503-e38b-405a-942d-af7c83be31b1"
+        },
+        {
+            "createdAt": "2020-06-23T16:39:29",
+            "description": "",
+            "fileSize": 3407,
+            "fileTypeId": "PacBio.FileTypes.JsonReport",
+            "isChunked": false,
+            "modifiedAt": "2020-06-23T16:39:29",
+            "name": "loading_xml",
+            "path": "/bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/cb/0009573623203b6bcfb0119ce85a62/loading_xml/loading_xml.json",
+            "sourceId": "pbreports.tasks.loading_report_xml",
+            "uniqueId": "0cfa60a0-7679-4d88-9865-a9c516d0ac81"
+        },
+        {
+            "createdAt": "2020-06-23T16:39:30",
+            "description": "",
+            "fileSize": 2002,
+            "fileTypeId": "PacBio.FileTypes.JsonReport",
+            "isChunked": false,
+            "modifiedAt": "2020-06-23T16:39:30",
+            "name": "control",
+            "path": "/bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/cb/0009573623203b6bcfb0119ce85a62/control/control.json",
+            "sourceId": "pbreports.tasks.control_report",
+            "uniqueId": "12336908-a362-4f1e-83f2-2c482564ca8f"
+        }
+    ],
+    "updatedAt": "2020-06-23T16:39:30",
+    "version": "0.2.2"
+}

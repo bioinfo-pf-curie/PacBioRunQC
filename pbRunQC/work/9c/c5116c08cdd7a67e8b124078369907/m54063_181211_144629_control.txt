@@ -1,0 +1,2 @@
+Well	Number_of_of_Control_Reads	Control_Read_Length_Mean	Control_Read_Concordance_Mean	Control_Read_Concordance_Mode
+m54063_181211_144629	8737	37651	0.865795	0.89

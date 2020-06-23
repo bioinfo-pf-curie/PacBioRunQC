@@ -1,0 +1,2 @@
+Sample	Adapter_Dimers	Short_Inserts	Local_Base_Rate
+m54063_181211_144629	0.0	0.0	2.74059

@@ -1,0 +1,2 @@
+Well	Polymerase_Read_Bases	Unique_Molecular_Yield	Polymerase_Reads	Polymerase_Read_Length	Polymerase_Read_N50	Subread_Length	Subread_N50	Insert_Length_subread_mean	Insert_N50
+2_B01	19922339733	1.156595667	531633	37474	69571	1458	2058	2591	3077

@@ -1,0 +1,274 @@
+## config for MultiQC
+##
+##################################################################
+custom_logo_url: https://science.curie.fr/plateformes/sequencage-adn-haut-debit-ngs/
+custom_logo_title: Institut Curie
+output_fn_name: 'pbRunQC_report.html'
+
+custom_data:
+    subreads_stat:
+        file_format: 'tsv'
+        section_name: 'Status'
+        description: 'first table.'
+        plot_type: 'table'
+        pconfig:
+            id: 'subreads_stat'
+            save_file: true
+            scale: False
+            col1_header: 'Well'
+        headers:
+              Wellcell_Name:
+                title: 'Well Cell Name'
+              Run_Name: 
+                title: 'Run Name'
+              Data_Set: 
+                title: 'Data Set'
+              Movie_Time:
+                title: 'Movie Time'
+                format: '{:,.0f}'
+                suffix: ' hrs'
+              Organism:
+                title: 'Organism'
+              Kit_Version:
+                title: 'Kit Version'
+              SMRT_Link_Version:
+                title: 'SMRT Link Version'
+              Metadata_Context_Id:
+                title: 'Metadata Context Id'
+
+    lengths_stat:
+        file_format: 'tsv'
+        section_name: 'Raw Data Report'
+        description: 'length table.'
+        plot_type: 'table'
+        pconfig:
+            id: 'lengths_stat'
+            save_file: true
+            scale: False
+            col1_header: 'Well'
+        headers:
+              Polymerase_Read_Bases:
+                title: 'Polymerase Read Bases'
+                format: '{:,.0f}'
+                scale: 'PuBu'
+              Unique_Molecular_Yield:
+                title: 'Unique Molecular Yield'
+                format: '{:,.2f}'
+                suffix: ' Gb'
+              Polymerase_Reads:
+                title: 'Polymerase Reads'
+                format: '{:,.0f}'
+              Polymerase_Read_Length:
+                title: 'Polymerase Read Length (mean)'
+                format: '{:,.0f}'
+              Polymerase_Read_N50:
+                title: 'Polymerase Read N50'
+                format: '{:,.0f}'
+              Subread_Length:
+                title: 'Subread Length (mean)' 
+                format: '{:,.0f}'
+              Subread_N50:
+                title: 'Subread N50'
+                format: '{:,.0f}'
+              Insert_Length_subread_mean:
+                title: 'Insert Length (mean)'
+                format: '{:,.0f}'
+              Insert_N50:
+                title: 'Insert N50'
+                format: '{:,.0f}'
+
+    adapter_report:
+        file_format: 'tsv'
+        section_name: 'Adapter Report'
+        description: 'Adapter table.'
+        plot_type: 'table'
+        pconfig:
+            id: 'adapter_report'
+            save_file: true
+            scale: False
+            col1_header: 'Well'
+        headers:
+              Adapter_Dimers:
+                title: 'Adapter Dimers (0-10bp) %'
+                format: '{:,.2f}'
+                surffix: ' %'
+              Short_Inserts:
+                title: 'Short Inserts (11-100bp) %'
+                format: '{:,.2f}'
+                suffix: ' %'
+              Local_Base_Rate:
+                title: 'Local Base Rate'
+                description: 'Average base incorporation rate'
+                format: '{:,.2f}'
+                scale: 'PuBu'
+
+    control_report:
+        file_format: 'tsv'
+        section_name: 'Control Report'
+        description: 'Control table.'
+        plot_type: 'table'
+        pconfig:
+            id: 'control_report'
+            save_file: true
+            scale: False
+            col1_header: 'Well'
+        headers:
+              Number_of_of_Control_Reads:
+                title: 'Number Of Control Reads'
+                format: '{:,.0f}'
+                scale: 'PuBu'
+              Control_Read_Length_Mean:
+                title: 'Control Read Length Mean'
+                format: '{:,.0f}'
+              Control_Read_Concordance_Mean:
+                title: 'Control Read Concordance Mean'
+                format: '{:,.2f}'
+              Control_Read_Concordance_Mode:
+                title: 'Control Read Concordance Mode'
+                format: '{:,.2f}'
+
+    loading_report:
+        file_format: 'tsv'
+        section_name: 'Loading Statistics'
+        description: 'productivity table.'
+        plot_type: 'table'
+        pconfig:
+            id: 'loading_report'
+            save_file: true
+            scale: False
+            col1_header: 'Well'
+        headers:
+              Productive_ZMWs:
+                title: 'Productive ZMWs'
+                format: '{:,.0f}'
+                scale: 'PuBu'
+                description: 'productive ZMWs'
+              Productivity_0:
+                title: 'Productivity 0'
+                description: 'empty ZMWs'
+                format: '{:,.0f}'
+              P0:
+                title: '%'
+                description: 'percentage empty ZMWs'
+                format: '{:,.2f}'
+                suffix: ' %'
+              Productivity_1:
+                title: 'Productivity 1'
+                description: 'ZMW with a high quality read detected'
+                format: '{:,.2f}'
+              P1:
+                title: '%'
+                format: '{:,.2f}'
+                suffix: ' %'
+                description: 'percentage ZMW with a high quality read detected'
+              Productivity_2:
+                title: 'Productivity 2'
+                description: 'other: no high quality'
+                format: '{:,.2f}'
+              P2:
+                title: '%'
+                description: 'percentage no high quality'
+                format: '{:,.2f}'
+                suffix: ' %'
+
+
+    productivity_stat:
+        id: 'productivity_stat'
+        file_format: 'tsv'
+        section_name: 'Productivity'
+        description: 'productivity_stat'
+        plot_type: 'bargraph'
+        pconfig:
+            id: 'barplot_config_only'
+            title: 'Productivity'
+
+    result_sprite:
+        file_format: '_mqc.png'
+        section_name: 'Image_1'
+        description: 'Raw Data plots.'
+
+
+sp:
+    result_sprite:
+        fn: 'result2multiqc_mqc.png'
+    subreads_stat:
+        fn: '*_subreads.txt'
+    lengths_stat:
+        fn: '*_lengths.txt'
+    loading_report:
+        fn: '*_loading.txt'
+    productivity_stat:
+        fn: '*_productivity.txt'
+    adapter_report:
+        fn: '*_adapter.txt'
+    control_report:
+        fn: '*_control.txt'
+
+
+custom_plot_config:
+    barplot_config_only:
+      P0:
+        color: '#d84e2f'
+      P1:
+        color: '#10b55f'
+      P2:
+        ##color: '#ffa54a'
+        color: '#787878'
+
+
+table_cond_formatting_rules:
+    P1:
+        pass:
+            - gt: 40
+        warn:
+            - gt: 70
+        fail:
+            - lt: 40
+
+
+table_columns_placement:
+    lengths_stat:
+        Well: 900
+        Polymerase_Read_Bases: 910
+        Unique_Molecular_Yield: 1000
+        Polymerase_Reads: 920
+        Polymerase_Read_Length: 930
+        Polymerase_Read_N50: 940
+        Subread_Length: 950
+        Subread_N50: 960
+        Insert_Length: 970
+        Insert_N50: 990
+
+    subreads_stat:
+       Well: 900
+       Wellcell_Name: 910
+       Run_Name: 920
+       Data_Set: 930
+       Movie_Time: 940
+       Organism: 950
+       Kit_Version: 960
+       SMRT_Link_Version: 970
+       Metadata_Context_Id: 980
+
+    adapter_report:
+       Well: 900
+       Adapter_Dimers: 910
+       Short_Inserts: 930
+       Local_Base_Rate: 950
+
+    control_report:
+       Well: 900
+       Number_of_of_Control_Reads: 910
+       Control_Read_Length_Mean: 930
+       Control_Read_Concordance_Mean: 940
+       Control_Read_Concordance_Mode: 950
+
+    loading_report:
+       Well: 900
+       Productive_ZMWs: 910
+       Productivity_0: 920
+       P0: 930
+       Productivity_1: 950
+       P1: 960
+       Productivity_2: 980
+       P2: 1000

@@ -1,0 +1,2 @@
+Sample	Polymerase_Read_Bases	Unique_Molecular_Yield	Polymerase_Reads	Polymerase_Read_Length	Polymerase_Read_N50	Subread_Length	Subread_N50	Insert_Length_subread_mean	Insert_N50
+m54063_181211_144629	100904.0	7.013e-06	4.0	25226.0	64680.0	1268.0	1238.0	1863.0	4207.0

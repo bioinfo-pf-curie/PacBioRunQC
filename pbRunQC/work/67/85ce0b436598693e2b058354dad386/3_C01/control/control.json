@@ -1,0 +1,66 @@
+{
+    "_comment": "Generated with pbcommand version 1.9.2 at 2020-06-17T12:02:55.594399",
+    "attributes": [
+        {
+            "id": "control.reads_n",
+            "name": "Number of of Control Reads",
+            "value": 10961
+        },
+        {
+            "id": "control.readlength_mean",
+            "name": "Control Read Length Mean",
+            "value": 36124
+        },
+        {
+            "id": "control.concordance_mean",
+            "name": "Control Read Concordance Mean",
+            "value": 0.864502
+        },
+        {
+            "id": "control.concordance_mode",
+            "name": "Control Read Concordance Mode",
+            "value": 0.89
+        }
+    ],
+    "dataset_uuids": [
+        "67ff4a33-ea7f-4e14-a466-004b7b711622"
+    ],
+    "id": "control",
+    "plotGroups": [
+        {
+            "id": "control.readlength_plotgroup",
+            "legend": null,
+            "plots": [
+                {
+                    "caption": "Control Polymerase RL",
+                    "id": "control.readlength_plotgroup.readlength_plot",
+                    "image": "readlength_plot.png",
+                    "plotType": "image",
+                    "title": "Control Polymerase RL"
+                }
+            ],
+            "thumbnail": null,
+            "title": "Control Read Length"
+        },
+        {
+            "id": "control.concordance_plotgroup",
+            "legend": null,
+            "plots": [
+                {
+                    "caption": "Control Concordance",
+                    "id": "control.concordance_plotgroup.concordance_plot",
+                    "image": "concordance_plot.png",
+                    "plotType": "image",
+                    "title": "Control Concordance"
+                }
+            ],
+            "thumbnail": null,
+            "title": "Polymerase Read Quality"
+        }
+    ],
+    "tables": [],
+    "tags": [],
+    "title": "Report control",
+    "uuid": "21a21917-23f5-400f-b2fe-564b805aef47",
+    "version": "1.0.1"
+}

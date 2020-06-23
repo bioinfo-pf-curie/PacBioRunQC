@@ -1,0 +1,32 @@
+[INFO] 2020-06-17 08:49:21,920Z [__main__ _pacbio_main_runner 159] Using pbcommand v1.9.2
+[INFO] 2020-06-17 08:49:21,920Z [__main__ _pacbio_main_runner 160] completed setting up logger with <function setup_log at 0x7fba5c832b18>
+[INFO] 2020-06-17 08:49:21,920Z [__main__ _pacbio_main_runner 161] log opts {'file_name': None, 'level': 20}
+[INFO] 2020-06-17 08:49:21,920Z [__main__ to_reports 30] Loading /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/a3/d71b462c2ce28f9031a660183e48bc/m54063_181212_010613.subreadset.xml
+[INFO] 2020-06-17 08:49:21,981Z [pbreports.report.filter_stats_xml to_report_impl 307] Unique molecular yield from sts.xml: None
+[INFO] 2020-06-17 08:49:21,981Z [pbreports.report.filter_stats_xml to_report_impl 309] Computing metrics from .pbi file
+[INFO] 2020-06-17 08:49:30,381Z [pbreports.plot.helper _save_figures 337] Saving figure /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/a3/d71b462c2ce28f9031a660183e48bc/filter_stats_xml/readLenDist0.png with dpi 350
+[INFO] 2020-06-17 08:49:30,732Z [pbreports.plot.helper _save_figures 337] Saving figure /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/a3/d71b462c2ce28f9031a660183e48bc/filter_stats_xml/readLenDist0_thumb.png with dpi 20
+[INFO] 2020-06-17 08:49:30,769Z [pbreports.report.filter_stats_xml to_subread_lengths_plot 242] Plotting subread lengths
+[INFO] 2020-06-17 08:49:30,802Z [pbreports.plot.helper _save_figures 337] Saving figure /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/a3/d71b462c2ce28f9031a660183e48bc/filter_stats_xml/subread_lengths.png with dpi 350
+[INFO] 2020-06-17 08:49:31,151Z [pbreports.plot.helper _save_figures 337] Saving figure /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/a3/d71b462c2ce28f9031a660183e48bc/filter_stats_xml/subread_lengths_thumb.png with dpi 20
+[INFO] 2020-06-17 08:49:31,214Z [pbreports.plot.helper _save_figures 337] Saving figure /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/a3/d71b462c2ce28f9031a660183e48bc/filter_stats_xml/insertLenDist0.png with dpi 350
+[INFO] 2020-06-17 08:49:31,565Z [pbreports.plot.helper _save_figures 337] Saving figure /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/a3/d71b462c2ce28f9031a660183e48bc/filter_stats_xml/insertLenDist0_thumb.png with dpi 20
+[INFO] 2020-06-17 08:49:31,602Z [pbreports.report.filter_stats_xml to_hexbin_plot 250] Plotting insert read lengths versus polymerase read lengths
+[INFO] 2020-06-17 08:49:31,949Z [pbreports.plot.helper _save_figures 337] Saving figure /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/a3/d71b462c2ce28f9031a660183e48bc/filter_stats_xml/hexbin_length_plot.png with dpi 350
+[INFO] 2020-06-17 08:49:32,869Z [pbreports.plot.helper _save_figures 337] Saving figure /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/a3/d71b462c2ce28f9031a660183e48bc/filter_stats_xml/hexbin_length_plot_thumb.png with dpi 20
+[INFO] 2020-06-17 08:49:32,969Z [pbreports.report.filter_stats_xml to_base_yield_plot 258] Plotting base yield as a function of read length
+[INFO] 2020-06-17 08:49:33,312Z [pbreports.plot.helper _save_figures 337] Saving figure /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/a3/d71b462c2ce28f9031a660183e48bc/filter_stats_xml/base_yield_plot.png with dpi 350
+[INFO] 2020-06-17 08:49:33,647Z [pbreports.plot.helper _save_figures 337] Saving figure /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/a3/d71b462c2ce28f9031a660183e48bc/filter_stats_xml/base_yield_plot_thumb.png with dpi 20
+[INFO] 2020-06-17 08:49:33,682Z [__main__ to_reports 45] Writing /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/a3/d71b462c2ce28f9031a660183e48bc/filter_stats_xml/filter_stats_xml.json
+[INFO] 2020-06-17 08:49:33,727Z [pbreports.plot.helper _save_figures 337] Saving figure /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/a3/d71b462c2ce28f9031a660183e48bc/adapter_xml/interAdapterDist0.png with dpi 350
+[INFO] 2020-06-17 08:49:34,070Z [pbreports.plot.helper _save_figures 337] Saving figure /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/a3/d71b462c2ce28f9031a660183e48bc/adapter_xml/interAdapterDist0_thumb.png with dpi 20
+[INFO] 2020-06-17 08:49:34,107Z [__main__ to_reports 45] Writing /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/a3/d71b462c2ce28f9031a660183e48bc/adapter_xml/adapter_xml.json
+[INFO] 2020-06-17 08:49:34,184Z [pbreports.plot.helper _save_figures 337] Saving figure /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/a3/d71b462c2ce28f9031a660183e48bc/loading_xml/raw_read_length_plot.png with dpi 350
+[INFO] 2020-06-17 08:49:34,543Z [pbreports.plot.helper _save_figures 337] Saving figure /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/a3/d71b462c2ce28f9031a660183e48bc/loading_xml/raw_read_length_plot_thumb.png with dpi 20
+[INFO] 2020-06-17 08:49:34,578Z [__main__ to_reports 45] Writing /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/a3/d71b462c2ce28f9031a660183e48bc/loading_xml/loading_xml.json
+[INFO] 2020-06-17 08:49:34,616Z [pbreports.plot.helper _save_figures 337] Saving figure /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/a3/d71b462c2ce28f9031a660183e48bc/control/readlength_plot.png with dpi 350
+[INFO] 2020-06-17 08:49:34,979Z [pbreports.plot.helper _save_figures 337] Saving figure /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/a3/d71b462c2ce28f9031a660183e48bc/control/readlength_plot_thumb.png with dpi 20
+[INFO] 2020-06-17 08:49:35,048Z [pbreports.plot.helper _save_figures 337] Saving figure /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/a3/d71b462c2ce28f9031a660183e48bc/control/concordance_plot.png with dpi 350
+[INFO] 2020-06-17 08:49:35,403Z [pbreports.plot.helper _save_figures 337] Saving figure /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/a3/d71b462c2ce28f9031a660183e48bc/control/concordance_plot_thumb.png with dpi 20
+[INFO] 2020-06-17 08:49:35,438Z [__main__ to_reports 45] Writing /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/a3/d71b462c2ce28f9031a660183e48bc/control/control.json
+[INFO] 2020-06-17 08:49:35,451Z [__main__ _pacbio_main_runner 199] exiting with return code 0 in 13.53 sec.

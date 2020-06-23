@@ -1,0 +1,87 @@
+juin-23 17:48:01.264 [main] DEBUG nextflow.cli.Launcher - Setting HTTP proxy: [www-cache, 3128]
+juin-23 17:48:01.331 [main] DEBUG nextflow.cli.Launcher - Setting HTTPS proxy: [www-cache, 3128]
+juin-23 17:48:01.331 [main] DEBUG nextflow.cli.Launcher - Setting http proxy: [www-cache, 3128]
+juin-23 17:48:01.332 [main] DEBUG nextflow.cli.Launcher - Setting https proxy: [www-cache, 3128]
+juin-23 17:48:01.332 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf --samplePlan test-op/sampleplan.csv
+juin-23 17:48:01.411 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 19.07.0
+juin-23 17:48:01.425 [main] INFO  nextflow.cli.CmdRun - Launching `main.nf` [nostalgic_lalande] - revision: a9840ac25f
+juin-23 17:48:01.434 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/nextflow.config
+juin-23 17:48:01.435 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/nextflow.config
+juin-23 17:48:01.456 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+juin-23 17:48:01.941 [main] DEBUG nextflow.Session - Session uuid: aa3343fb-ba13-45b9-b661-a37e8e18f93c
+juin-23 17:48:01.941 [main] DEBUG nextflow.Session - Run name: nostalgic_lalande
+juin-23 17:48:01.942 [main] DEBUG nextflow.Session - Executor pool size: 4
+juin-23 17:48:01.981 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 19.07.0 build 5106
+  Created: 27-07-2019 13:22 UTC (15:22 CEST)
+  System: Linux 3.10.0-862.3.2.el7.x86_64
+  Runtime: Groovy 2.5.6 on OpenJDK 64-Bit Server VM 11.0.1-internal+0-adhoc..src
+  Encoding: UTF-8 (UTF-8)
+  Process: 18115@u900-bdd-1-102n-6990 [10.200.11.73]
+  CPUs: 4 - Mem: 15.4 GB (8.7 GB) - Swap: 4 GB (4 GB)
+juin-23 17:48:02.026 [main] DEBUG nextflow.Session - Work-dir: /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work [nfs]
+juin-23 17:48:02.228 [main] DEBUG nextflow.Session - Session start invoked
+juin-23 17:48:02.231 [main] DEBUG nextflow.trace.TraceFileObserver - Flow starting -- trace file: /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/results/pipeline_info/pipeline_info/pbRunQC_trace.txt
+juin-23 17:48:02.520 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+juin-23 17:48:02.531 [main] WARN  nextflow.script.ScriptBinding - Access to undefined parameter `help` -- Initialise it to a default value eg. `params.help = some_value`
+juin-23 17:48:02.572 [main] WARN  nextflow.script.ScriptBinding - Access to undefined parameter `dataSetPaths` -- Initialise it to a default value eg. `params.dataSetPaths = some_value`
+juin-23 17:48:02.642 [main] INFO  nextflow.Nextflow - =======================================================
+
+pbRunQC v1.0.0"
+=======================================================
+juin-23 17:48:02.643 [main] WARN  nextflow.script.ScriptBinding - Access to undefined parameter `email` -- Initialise it to a default value eg. `params.email = some_value`
+juin-23 17:48:02.648 [main] INFO  nextflow.Nextflow - Pipeline Name  : pbRunQC
+Pipeline Version: 1.0.0
+Run Name       : nostalgic_lalande
+Metadata       : /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/assets/metadata.tsv
+SamplePlan     : test-op/sampleplan.csv
+Max Memory     : 128 GB
+Max CPUs       : 16
+Max Time       : 10d
+Container Engine: null
+Current home   : /data/users/talaeita
+Current user   : talaeita
+Current path   : /data/users/talaeita/git/pacbio-smrtlink/pbRunQC
+Working dir    : /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work
+Output dir     : ./results
+Config Profile : standard
+juin-23 17:48:02.649 [main] INFO  nextflow.Nextflow - =========================================
+juin-23 17:48:02.717 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+juin-23 17:48:02.717 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+juin-23 17:48:02.720 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+juin-23 17:48:02.722 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=4; memory=15.4 GB; capacity=4; pollInterval=100ms; dumpInterval=5m
+juin-23 17:48:02.749 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > subreads_reports -- maxForks: 4
+juin-23 17:48:02.782 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+juin-23 17:48:02.782 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+juin-23 17:48:02.783 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > makeReport -- maxForks: 4
+juin-23 17:48:02.813 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+juin-23 17:48:02.813 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+juin-23 17:48:02.815 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > multiqc -- maxForks: 4
+juin-23 17:48:02.826 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+juin-23 17:48:02.827 [main] DEBUG nextflow.Session - Session await
+juin-23 17:48:02.972 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+juin-23 17:48:02.977 [Task submitter] INFO  nextflow.Session - [39/df5a83] Submitted process > subreads_reports (1_A01 (raw))
+juin-23 17:48:23.306 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: subreads_reports (1_A01 (raw)); status: COMPLETED; exit: 0; error: -; workDir: /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/39/df5a83a86848b56623044f1c6ba5f3]
+juin-23 17:48:23.324 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+juin-23 17:48:23.325 [Task submitter] INFO  nextflow.Session - [6e/c5378c] Submitted process > subreads_reports (2_B01 (raw))
+juin-23 17:48:23.339 [Task monitor] DEBUG n.util.BlockingThreadExecutorFactory - Thread pool name=FileTransfer; maxThreads=12; maxQueueSize=36; keepAlive=1m
+juin-23 17:48:44.088 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: subreads_reports (2_B01 (raw)); status: COMPLETED; exit: 0; error: -; workDir: /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/6e/c5378ceaa366f946262ab5b66a3688]
+juin-23 17:48:44.127 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+juin-23 17:48:44.128 [Task submitter] INFO  nextflow.Session - [45/b8b0be] Submitted process > makeReport (1)
+juin-23 17:48:44.981 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: makeReport (1); status: COMPLETED; exit: 0; error: -; workDir: /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/45/b8b0be0f3a5981c469f604ace69c74]
+juin-23 17:48:45.013 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+juin-23 17:48:45.014 [Task submitter] INFO  nextflow.Session - [d3/f3c334] Submitted process > makeReport (2)
+juin-23 17:48:45.712 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: makeReport (2); status: COMPLETED; exit: 0; error: -; workDir: /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/d3/f3c334ab4a64b7cea7f74f6dfba18a]
+juin-23 17:48:45.771 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+juin-23 17:48:45.771 [Task submitter] INFO  nextflow.Session - [e6/23b450] Submitted process > multiqc (1)
+juin-23 17:48:51.502 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: multiqc (1); status: COMPLETED; exit: 0; error: -; workDir: /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/e6/23b450226e7e5b7f3e36bb175d21e8]
+juin-23 17:48:51.524 [main] DEBUG nextflow.Session - Session await > all process finished
+juin-23 17:48:51.542 [main] DEBUG nextflow.Session - Session await > all barriers passed
+juin-23 17:48:51.674 [main] DEBUG nextflow.trace.StatsObserver - Workflow completed > WorkflowStats[succeedCount=5; failedCount=0; ignoredCount=0; cachedCount=0; succeedDuration=47.2s; failedDuration=0ms; cachedDuration=0ms]
+juin-23 17:48:51.674 [main] DEBUG nextflow.trace.TraceFileObserver - Flow completing -- flushing trace file
+juin-23 17:48:51.680 [main] DEBUG nextflow.trace.ReportObserver - Flow completing -- rendering html report
+juin-23 17:48:51.759 [main] DEBUG nextflow.trace.ReportObserver - Execution report summary data:
+  {"subreads_reports":{"cpu":{"mean":93.5,"min":93,"q1":93.25,"q2":93.5,"q3":93.75,"max":94,"minLabel":"subreads_reports (2_B01 (raw))","maxLabel":"subreads_reports (1_A01 (raw))","q1Label":"subreads_reports (2_B01 (raw))","q2Label":"subreads_reports (2_B01 (raw))","q3Label":"subreads_reports (2_B01 (raw))"},"mem":{"mean":288888832,"min":288837632,"q1":288863232,"q2":288888832,"q3":288914432,"max":288940032,"minLabel":"subreads_reports (1_A01 (raw))","maxLabel":"subreads_reports (2_B01 (raw))","q1Label":"subreads_reports (1_A01 (raw))","q2Label":"subreads_reports (1_A01 (raw))","q3Label":"subreads_reports (1_A01 (raw))"},"vmem":{"mean":717105152,"min":717090816,"q1":717097984,"q2":717105152,"q3":717112320,"max":717119488,"minLabel":"subreads_reports (1_A01 (raw))","maxLabel":"subreads_reports (2_B01 (raw))","q1Label":"subreads_reports (1_A01 (raw))","q2Label":"subreads_reports (1_A01 (raw))","q3Label":"subreads_reports (1_A01 (raw))"},"time":{"mean":20303.5,"min":20100,"q1":20201.75,"q2":20303.5,"q3":20405.25,"max":20507,"minLabel":"subreads_reports (1_A01 (raw))","maxLabel":"subreads_reports (2_B01 (raw))","q1Label":"subreads_reports (1_A01 (raw))","q2Label":"subreads_reports (1_A01 (raw))","q3Label":"subreads_reports (1_A01 (raw))"},"reads":{"mean":161231946,"min":160867429,"q1":161049687.5,"q2":161231946,"q3":161414204.5,"max":161596463,"minLabel":"subreads_reports (2_B01 (raw))","maxLabel":"subreads_reports (1_A01 (raw))","q1Label":"subreads_reports (2_B01 (raw))","q2Label":"subreads_reports (2_B01 (raw))","q3Label":"subreads_reports (2_B01 (raw))"},"writes":{"mean":5411048,"min":5310769,"q1":5360908.5,"q2":5411048,"q3":5461187.5,"max":5511327,"minLabel":"subreads_reports (1_A01 (raw))","maxLabel":"subreads_reports (2_B01 (raw))","q1Label":"subreads_reports (1_A01 (raw))","q2Label":"subreads_reports (1_A01 (raw))","q3Label":"subreads_reports (1_A01 (raw))"},"cpuUsage":{"mean":93.5,"min":93,"q1":93.25,"q2":93.5,"q3":93.75,"max":94,"minLabel":"subreads_reports (2_B01 (raw))","maxLabel":"subreads_reports (1_A01 (raw))","q1Label":"subreads_reports (2_B01 (raw))","q2Label":"subreads_reports (2_B01 (raw))","q3Label":"subreads_reports (2_B01 (raw))"},"memUsage":{"mean":3.36,"min":3.36,"q1":3.36,"q2":3.36,"q3":3.36,"max":3.36,"minLabel":"subreads_reports (1_A01 (raw))","maxLabel":"subreads_reports (2_B01 (raw))","q1Label":"subreads_reports (1_A01 (raw))","q2Label":"subreads_reports (1_A01 (raw))","q3Label":"subreads_reports (1_A01 (raw))"},"timeUsage":{"mean":0.28,"min":0.28,"q1":0.28,"q2":0.28,"q3":0.28,"max":0.28,"minLabel":"subreads_reports (1_A01 (raw))","maxLabel":"subreads_reports (2_B01 (raw))","q1Label":"subreads_reports (1_A01 (raw))","q2Label":"subreads_reports (1_A01 (raw))","q3Label":"subreads_reports (1_A01 (raw))"}},"makeReport":{"cpu":{"mean":106.75,"min":98.1,"q1":102.43,"q2":106.75,"q3":111.08,"max":115.4,"minLabel":"makeReport (1)","maxLabel":"makeReport (2)","q1Label":"makeReport (1)","q2Label":"makeReport (1)","q3Label":"makeReport (1)"},"mem":{"mean":4077568,"min":1449984,"q1":2763776,"q2":4077568,"q3":5391360,"max":6705152,"minLabel":"makeReport (2)","maxLabel":"makeReport (1)","q1Label":"makeReport (2)","q2Label":"makeReport (2)","q3Label":"makeReport (2)"},"vmem":{"mean":179857408,"min":115896320,"q1":147876864,"q2":179857408,"q3":211837952,"max":243818496,"minLabel":"makeReport (2)","maxLabel":"makeReport (1)","q1Label":"makeReport (2)","q2Label":"makeReport (2)","q3Label":"makeReport (2)"},"time":{"mean":574.5,"min":498,"q1":536.25,"q2":574.5,"q3":612.75,"max":651,"minLabel":"makeReport (2)","maxLabel":"makeReport (1)","q1Label":"makeReport (2)","q2Label":"makeReport (2)","q3Label":"makeReport (2)"},"reads":{"mean":4109196,"min":4109195,"q1":4109195.5,"q2":4109196,"q3":4109196.5,"max":4109197,"minLabel":"makeReport (1)","maxLabel":"makeReport (2)","q1Label":"makeReport (1)","q2Label":"makeReport (1)","q3Label":"makeReport (1)"},"writes":{"mean":1109,"min":1108,"q1":1108.5,"q2":1109,"q3":1109.5,"max":1110,"minLabel":"makeReport (1)","maxLabel":"makeReport (2)","q1Label":"makeReport (1)","q2Label":"makeReport (1)","q3Label":"makeReport (1)"},"cpuUsage":{"mean":106.75,"min":98.1,"q1":102.43,"q2":106.75,"q3":111.08,"max":115.4,"minLabel":"makeReport (1)","maxLabel":"makeReport (2)","q1Label":"makeReport (1)","q2Label":"makeReport (1)","q3Label":"makeReport (1)"},"memUsage":{"mean":0.05,"min":0.02,"q1":0.03,"q2":0.05,"q3":0.06,"max":0.08,"minLabel":"makeReport (2)","maxLabel":"makeReport (1)","q1Label":"makeReport (2)","q2Label":"makeReport (2)","q3Label":"makeReport (2)"},"timeUsage":{"mean":0.01,"min":0.01,"q1":0.01,"q2":0.01,"q3":0.01,"max":0.01,"minLabel":"makeReport (2)","maxLabel":"makeReport (1)","q1Label":"makeReport (2)","q2Label":"makeReport (2)","q3Label":"makeReport (2)"}},"multiqc":{"cpu":{"mean":52.5,"min":52.5,"q1":52.5,"q2":52.5,"q3":52.5,"max":52.5,"minLabel":"multiqc (1)","maxLabel":"multiqc (1)","q1Label":"multiqc (1)","q2Label":"multiqc (1)","q3Label":"multiqc (1)"},"mem":{"mean":98541568,"min":98541568,"q1":98541568,"q2":98541568,"q3":98541568,"max":98541568,"minLabel":"multiqc (1)","maxLabel":"multiqc (1)","q1Label":"multiqc (1)","q2Label":"multiqc (1)","q3Label":"multiqc (1)"},"vmem":{"mean":630898688,"min":630898688,"q1":630898688,"q2":630898688,"q3":630898688,"max":630898688,"minLabel":"multiqc (1)","maxLabel":"multiqc (1)","q1Label":"multiqc (1)","q2Label":"multiqc (1)","q3Label":"multiqc (1)"},"time":{"mean":5482,"min":5482,"q1":5482,"q2":5482,"q3":5482,"max":5482,"minLabel":"multiqc (1)","maxLabel":"multiqc (1)","q1Label":"multiqc (1)","q2Label":"multiqc (1)","q3Label":"multiqc (1)"},"reads":{"mean":21123029,"min":21123029,"q1":21123029,"q2":21123029,"q3":21123029,"max":21123029,"minLabel":"multiqc (1)","maxLabel":"multiqc (1)","q1Label":"multiqc (1)","q2Label":"multiqc (1)","q3Label":"multiqc (1)"},"writes":{"mean":5619330,"min":5619330,"q1":5619330,"q2":5619330,"q3":5619330,"max":5619330,"minLabel":"multiqc (1)","maxLabel":"multiqc (1)","q1Label":"multiqc (1)","q2Label":"multiqc (1)","q3Label":"multiqc (1)"},"cpuUsage":{"mean":52.5,"min":52.5,"q1":52.5,"q2":52.5,"q3":52.5,"max":52.5,"minLabel":"multiqc (1)","maxLabel":"multiqc (1)","q1Label":"multiqc (1)","q2Label":"multiqc (1)","q3Label":"multiqc (1)"},"memUsage":{"mean":1.15,"min":1.15,"q1":1.15,"q2":1.15,"q3":1.15,"max":1.15,"minLabel":"multiqc (1)","maxLabel":"multiqc (1)","q1Label":"multiqc (1)","q2Label":"multiqc (1)","q3Label":"multiqc (1)"},"timeUsage":{"mean":0.08,"min":0.08,"q1":0.08,"q2":0.08,"q3":0.08,"max":0.08,"minLabel":"multiqc (1)","maxLabel":"multiqc (1)","q1Label":"multiqc (1)","q2Label":"multiqc (1)","q3Label":"multiqc (1)"}}}
+juin-23 17:48:52.382 [main] DEBUG nextflow.trace.TimelineObserver - Flow completing -- rendering html timeline
+juin-23 17:48:52.623 [main] DEBUG nextflow.CacheDB - Closing CacheDB done
+juin-23 17:48:52.661 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

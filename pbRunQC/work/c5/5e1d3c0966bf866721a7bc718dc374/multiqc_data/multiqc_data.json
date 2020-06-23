@@ -1,0 +1,186 @@
+{
+    "report_data_sources": {},
+    "report_general_stats_data": [],
+    "report_general_stats_headers": [],
+    "report_multiqc_command": "/data/users/talaeita/work/envs_conda/curie-rawqc-2.0-dev/bin/multiqc makeReport/m54063_181211_144629_adapter.txt makeReport/m54063_181211_144629_control.txt makeReport/m54063_181211_144629_lengths.txt makeReport/m54063_181211_144629_loading.txt makeReport/m54063_181211_144629_overview.txt makeReport/m54063_181211_144629_productivity.txt makeReport/m54063_181211_144629_subreads.txt subreads_reports/m54063_181211_144629_mqc.png -f -c multiqc_config_overview.yaml -c multiqc_config_image.yaml",
+    "report_plot_data": {
+        "barplot_config_only": {
+            "plot_type": "bar_graph",
+            "samples": [
+                [
+                    "m54063_181211_144629"
+                ]
+            ],
+            "datasets": [
+                [
+                    {
+                        "name": "P0",
+                        "data": [
+                            22.693
+                        ],
+                        "color": "#d84e2f"
+                    },
+                    {
+                        "name": "P1",
+                        "data": [
+                            49.409
+                        ],
+                        "color": "#10b55f"
+                    },
+                    {
+                        "name": "P2",
+                        "data": [
+                            28.763
+                        ],
+                        "color": "#787878"
+                    }
+                ]
+            ],
+            "config": {
+                "id": "barplot_config_only",
+                "title": "Productivity",
+                "P0": {
+                    "color": "#d84e2f"
+                },
+                "P1": {
+                    "color": "#10b55f"
+                },
+                "P2": {
+                    "color": "#787878"
+                }
+            }
+        }
+    },
+    "report_saved_raw_data": {
+        "multiqc_subreads_stat-1": {
+            "m54063_181211_144629": {
+                "_Wellcell_Name": "H358_DMSO",
+                "_Data_Set": "H358_DMSO-Cell1",
+                "_Movie_Time": 10.0,
+                "_Organism": "homo_sapiens",
+                "_Kit_Version": 3.0,
+                "_SMRT_Link_Version": 6.0,
+                "_Metadata_Context_Id": "m54063_181211_144629"
+            }
+        },
+        "multiqc_status": {
+            "m54063_181211_144629": {
+                "Wellcell_Name": "H358_DMSO",
+                "Data_Set": "H358_DMSO-Cell1",
+                "Movie_Time": 10.0,
+                "Organism": "homo_sapiens",
+                "Kit_Version": 3.0,
+                "SMRT_Link_Version": 6.0,
+                "Metadata_Context_Id": "m54063_181211_144629"
+            }
+        },
+        "multiqc_lengths_stat-1": {
+            "m54063_181211_144629": {
+                "_Polymerase_Read_Bases": 100904.0,
+                "_Polymerase_Reads": 4.0,
+                "_Polymerase_Read_Length": 25226.0,
+                "_Polymerase_Read_N50": 64680.0,
+                "_Subread_Length": 1268.0,
+                "_Subread_N50": 1238.0,
+                "_Insert_N50": 4207.0,
+                "_Insert_Length_subread_mean": 1863.0,
+                "_Unique_Molecular_Yield": 7.013e-06
+            }
+        },
+        "multiqc_raw_data_report": {
+            "m54063_181211_144629": {
+                "Polymerase_Read_Bases": 100904.0,
+                "Unique_Molecular_Yield": 7.013e-06,
+                "Polymerase_Reads": 4.0,
+                "Polymerase_Read_Length": 25226.0,
+                "Polymerase_Read_N50": 64680.0,
+                "Subread_Length": 1268.0,
+                "Subread_N50": 1238.0,
+                "Insert_Length_subread_mean": 1863.0,
+                "Insert_N50": 4207.0
+            }
+        },
+        "multiqc_adapter_report-1": {
+            "m54063_181211_144629": {
+                "_Adapter_Dimers": 0.0,
+                "_Short_Inserts": 0.0,
+                "_Local_Base_Rate": 2.74059
+            }
+        },
+        "multiqc_adapter_report": {
+            "m54063_181211_144629": {
+                "Adapter_Dimers": 0.0,
+                "Short_Inserts": 0.0,
+                "Local_Base_Rate": 2.74059
+            }
+        },
+        "multiqc_control_report-1": {
+            "m54063_181211_144629": {
+                "_Number_of_of_Control_Reads": 8737.0,
+                "_Control_Read_Length_Mean": 37651.0,
+                "_Control_Read_Concordance_Mean": 0.865795,
+                "_Control_Read_Concordance_Mode": 0.89
+            }
+        },
+        "multiqc_control_report": {
+            "m54063_181211_144629": {
+                "Number_of_of_Control_Reads": 8737.0,
+                "Control_Read_Length_Mean": 37651.0,
+                "Control_Read_Concordance_Mean": 0.865795,
+                "Control_Read_Concordance_Mode": 0.89
+            }
+        },
+        "multiqc_loading_report-1": {
+            "m54063_181211_144629": {
+                "_Productive_ZMWs": 1009609.0,
+                "_Productivity_0": 229107.0,
+                "_P0": 22.693,
+                "_Productivity_1": 498841.0,
+                "_P1": 49.409,
+                "_Productivity_2": 290398.0,
+                "_P2": 28.763
+            }
+        },
+        "multiqc_loading_statistics": {
+            "m54063_181211_144629": {
+                "Productive_ZMWs": 1009609.0,
+                "Productivity_0": 229107.0,
+                "P0": 22.693,
+                "Productivity_1": 498841.0,
+                "P1": 49.409,
+                "Productivity_2": 290398.0,
+                "P2": 28.763
+            }
+        },
+        "multiqc_qualimap_bamqc_genome_results": {}
+    },
+    "config_analysis_dir_abs": [
+        "/bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/c5/5e1d3c0966bf866721a7bc718dc374/makeReport/m54063_181211_144629_adapter.txt",
+        "/bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/c5/5e1d3c0966bf866721a7bc718dc374/makeReport/m54063_181211_144629_control.txt",
+        "/bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/c5/5e1d3c0966bf866721a7bc718dc374/makeReport/m54063_181211_144629_lengths.txt",
+        "/bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/c5/5e1d3c0966bf866721a7bc718dc374/makeReport/m54063_181211_144629_loading.txt",
+        "/bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/c5/5e1d3c0966bf866721a7bc718dc374/makeReport/m54063_181211_144629_overview.txt",
+        "/bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/c5/5e1d3c0966bf866721a7bc718dc374/makeReport/m54063_181211_144629_productivity.txt",
+        "/bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/c5/5e1d3c0966bf866721a7bc718dc374/makeReport/m54063_181211_144629_subreads.txt",
+        "/bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/c5/5e1d3c0966bf866721a7bc718dc374/subreads_reports/m54063_181211_144629_mqc.png"
+    ],
+    "config_analysis_dir": [
+        "makeReport/m54063_181211_144629_adapter.txt",
+        "makeReport/m54063_181211_144629_control.txt",
+        "makeReport/m54063_181211_144629_lengths.txt",
+        "makeReport/m54063_181211_144629_loading.txt",
+        "makeReport/m54063_181211_144629_overview.txt",
+        "makeReport/m54063_181211_144629_productivity.txt",
+        "makeReport/m54063_181211_144629_subreads.txt",
+        "subreads_reports/m54063_181211_144629_mqc.png"
+    ],
+    "config_creation_date": "2020-06-23, 17:23",
+    "config_git_hash": null,
+    "config_intro_text": null,
+    "config_report_comment": null,
+    "config_script_path": "/bioinfo/users/talaeita/work/envs_conda/curie-rawqc-2.0-dev/lib/python3.6/site-packages/multiqc/utils",
+    "config_short_version": "1.8",
+    "config_subtitle": null,
+    "config_title": null,
+    "config_version": "1.8"
+}

@@ -1,0 +1,2 @@
+Well	Number_of_of_Control_Reads	Control_Read_Length_Mean	Control_Read_Concordance_Mean	Control_Read_Concordance_Mode
+2_B01	10961	36124	0.864502	0.89

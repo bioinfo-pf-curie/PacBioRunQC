@@ -1,0 +1,1 @@
+/bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/test-op/data/m54063_181211_144629_0.1_percent/m54063_181211_144629.subreads.bam.pbi

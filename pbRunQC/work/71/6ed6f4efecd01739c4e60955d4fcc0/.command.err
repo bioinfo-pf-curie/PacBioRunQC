@@ -1,0 +1,41 @@
+[WARNING]         multiqc : MultiQC Version v1.9 now available!
+[INFO   ]         multiqc : This is MultiQC v1.8
+[INFO   ]         multiqc : Template    : default
+[INFO   ]         multiqc : Searching   : /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/71/6ed6f4efecd01739c4e60955d4fcc0/makeReport/m54063_181211_144629_adapter.txt
+[INFO   ]         multiqc : Searching   : /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/71/6ed6f4efecd01739c4e60955d4fcc0/makeReport/m54063_181211_144629_control.txt
+[INFO   ]         multiqc : Searching   : /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/71/6ed6f4efecd01739c4e60955d4fcc0/makeReport/m54063_181211_144629_lengths.txt
+[INFO   ]         multiqc : Searching   : /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/71/6ed6f4efecd01739c4e60955d4fcc0/makeReport/m54063_181211_144629_loading.txt
+[INFO   ]         multiqc : Searching   : /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/71/6ed6f4efecd01739c4e60955d4fcc0/makeReport/m54063_181211_144629_overview.txt
+[INFO   ]         multiqc : Searching   : /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/71/6ed6f4efecd01739c4e60955d4fcc0/makeReport/m54063_181211_144629_productivity.txt
+[INFO   ]         multiqc : Searching   : /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/71/6ed6f4efecd01739c4e60955d4fcc0/makeReport/m54063_181211_144629_subreads.txt
+[INFO   ]         multiqc : Searching   : /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/71/6ed6f4efecd01739c4e60955d4fcc0/makeReport/m54063_181212_010613_adapter.txt
+[INFO   ]         multiqc : Searching   : /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/71/6ed6f4efecd01739c4e60955d4fcc0/makeReport/m54063_181212_010613_control.txt
+[INFO   ]         multiqc : Searching   : /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/71/6ed6f4efecd01739c4e60955d4fcc0/makeReport/m54063_181212_010613_lengths.txt
+[INFO   ]         multiqc : Searching   : /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/71/6ed6f4efecd01739c4e60955d4fcc0/makeReport/m54063_181212_010613_loading.txt
+[INFO   ]         multiqc : Searching   : /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/71/6ed6f4efecd01739c4e60955d4fcc0/makeReport/m54063_181212_010613_overview.txt
+[INFO   ]         multiqc : Searching   : /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/71/6ed6f4efecd01739c4e60955d4fcc0/makeReport/m54063_181212_010613_productivity.txt
+[INFO   ]         multiqc : Searching   : /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/71/6ed6f4efecd01739c4e60955d4fcc0/makeReport/m54063_181212_010613_subreads.txt
+[INFO   ]         multiqc : Searching   : /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/71/6ed6f4efecd01739c4e60955d4fcc0/makeReport/m54063_181212_112538_adapter.txt
+[INFO   ]         multiqc : Searching   : /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/71/6ed6f4efecd01739c4e60955d4fcc0/makeReport/m54063_181212_112538_control.txt
+[INFO   ]         multiqc : Searching   : /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/71/6ed6f4efecd01739c4e60955d4fcc0/makeReport/m54063_181212_112538_lengths.txt
+[INFO   ]         multiqc : Searching   : /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/71/6ed6f4efecd01739c4e60955d4fcc0/makeReport/m54063_181212_112538_loading.txt
+[INFO   ]         multiqc : Searching   : /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/71/6ed6f4efecd01739c4e60955d4fcc0/makeReport/m54063_181212_112538_overview.txt
+[INFO   ]         multiqc : Searching   : /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/71/6ed6f4efecd01739c4e60955d4fcc0/makeReport/m54063_181212_112538_productivity.txt
+[INFO   ]         multiqc : Searching   : /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/71/6ed6f4efecd01739c4e60955d4fcc0/makeReport/m54063_181212_112538_subreads.txt
+[INFO   ]         multiqc : Searching   : /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/71/6ed6f4efecd01739c4e60955d4fcc0/subreads_reports/1_A01_mqc.png
+[INFO   ]         multiqc : Searching   : /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/71/6ed6f4efecd01739c4e60955d4fcc0/subreads_reports/2_B01_mqc.png
+[INFO   ]         multiqc : Searching   : /bioinfo/users/talaeita/git/pacbio-smrtlink/pbRunQC/work/71/6ed6f4efecd01739c4e60955d4fcc0/subreads_reports/3_C01_mqc.png
+[INFO   ]  custom_content : subreads_stat: Found 3 samples (table)
+[INFO   ]  custom_content : lengths_stat: Found 3 samples (table)
+[INFO   ]  custom_content : adapter_report: Found 3 samples (table)
+[INFO   ]  custom_content : control_report: Found 3 samples (table)
+[INFO   ]  custom_content : loading_report: Found 3 samples (table)
+[INFO   ]  custom_content : productivity_stat: Found 3 samples (bargraph)
+[INFO   ]  custom_content : 1_A01: Found 1 sample (image)
+[INFO   ]  custom_content : 2_B01: Found 1 sample (image)
+[INFO   ]  custom_content : 3_C01: Found 1 sample (image)
+[INFO   ]         multiqc : Compressing plot data
+[WARNING]          megaqc : Couldn't export data key 'config.report_header_info'
+[INFO   ]         multiqc : Report      : pbRunQC.html
+[INFO   ]         multiqc : Data        : multiqc_data
+[INFO   ]         multiqc : MultiQC complete

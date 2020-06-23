@@ -1,0 +1,2 @@
+Well	Adapter_Dimers	Short_Inserts	Local_Base_Rate
+3_C01	0.0	0.0	2.87234

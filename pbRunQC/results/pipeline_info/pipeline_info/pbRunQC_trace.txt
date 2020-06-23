@@ -1,0 +1,6 @@
+task_id	hash	native_id	name	status	exit	submit	duration	realtime	%cpu	peak_rss	peak_vmem	rchar	wchar
+2	00/adebbc	25143	subreads_reports (1_A01 (raw))	COMPLETED	0	2020-06-23 17:56:32.115	20.6s	20.3s	93,2%	275.4 MB	683.9 MB	154.1 MB	5.1 MB
+1	b4/cd0ad0	26235	subreads_reports (2_B01 (raw))	COMPLETED	0	2020-06-23 17:56:52.705	20.3s	20s	94,8%	275.5 MB	683.9 MB	153.4 MB	5.3 MB
+3	64/3b98be	27314	makeReport (1)	COMPLETED	0	2020-06-23 17:57:13.025	933ms	744ms	91,0%	5.6 MB	232 MB	3.9 MB	1.1 KB
+4	11/c744b1	27443	makeReport (2)	COMPLETED	0	2020-06-23 17:57:13.996	776ms	570ms	113,0%	6.4 MB	232.5 MB	3.9 MB	1.1 KB
+5	fc/df5d71	27572	multiqc (1)	COMPLETED	0	2020-06-23 17:57:14.845	5.2s	5s	52,1%	78.2 MB	576.9 MB	20.1 MB	5.4 MB

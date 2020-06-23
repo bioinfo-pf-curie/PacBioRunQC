@@ -1,0 +1,2 @@
+Well	Productive_ZMWs	Productivity_0	P0	Productivity_1	P1	Productivity_2	P2
+2_B01	1008867	168915	16.743	541172	53.642	308259	30.555

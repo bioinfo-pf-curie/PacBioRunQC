@@ -1,0 +1,2 @@
+Sample	Wellcell_Name	Data_Set	Movie_Time	Organism	Kit_Version	SMRT_Link_Version	Metadata_Context_Id
+m54063_181211_144629	H358_DMSO	H358_DMSO-Cell1	10.0	homo_sapiens	3.0	6.0	m54063_181211_144629
