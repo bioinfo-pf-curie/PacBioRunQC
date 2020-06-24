@@ -47,13 +47,15 @@ For more information about how to use MultiQC reports, see http://multiqc.info
 ### Short comprehension passage of plots
 The output contains plots of an individual SMRT Cell. Clicking on an individual plot displays an expanded view. These plots include:
 </br>
-
+|  |  |
+| ------ | ------ |
+| cell | cell |
+| cell | cell | 
 
   
 <table >
   <tr>
-    <td> <span style="color:red;  text-align:center;"> **Polymerase Read Length** 
-    <span style="color:black; text-align:center; vertical-align: center"> Plots the number of reads against the polymerase read length. Polymerase read represents a sequence of nucleotides incorporated by the DNA polymerase while reading a template, such as a circular SMRTbell™ template. 
+    <td> <span style="color:blue ; text-align:center;"> **Polymerase Read Length** <span style="color:black; text-align:center; vertical-align: center"> Plots the number of reads against the polymerase read length. Polymerase read represents a sequence of nucleotides incorporated by the DNA polymerase while reading a template, such as a circular SMRTbell™ template. 
     </td> 
     <td>[<img src="plots/readLenDist0.png" width="500"/>](plots/readLenDist0.png) </td>
   </tr>
