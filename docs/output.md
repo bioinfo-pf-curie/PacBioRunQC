@@ -47,7 +47,7 @@ For more information about how to use MultiQC reports, see http://multiqc.info
 ### Short comprehension passage of plots
 The output contains plots of an individual SMRT Cell. Clicking on an individual plot displays an expanded view. These plots include:
 </br>
-|  |  |
+|  desc      |  plot  |
 | ------ | ------ |
 | cell | cell |
 | cell | cell | 
