@@ -48,67 +48,19 @@ For more information about how to use MultiQC reports, see http://multiqc.info
 The output contains plots of an individual SMRT Cell. Clicking on an individual plot displays an expanded view. These plots include:
 </br>
 
-
+|  Description      |  plot  |
+| ------ | ------ |
+|<span style="color:blue; text-align:center; vertical-align: center">**Polymerase Read Length** <span style="color:black; text-align:center; vertical-align: center"> Plots the number of reads against the polymerase read length. Polymerase read represents a sequence of nucleotides incorporated by the DNA polymerase while reading a template, such as a circular SMRTbell™ template.  | [<img src="plots/readLenDist0.png" width="500"/>](plots/readLenDist0.png)  |
+|<span style="color:blue; text-align:center; vertical-align: center">**Subraed Length ** <span style="color:black; text-align:center; vertical-align: center; "> Plots the number of reads against the against the subread length, in base pairs. Subread contain a sequence from a single pass of a polymerase on a single strand of an insert within a SMRTbell™ template and no adapter sequences.  | [<img src="plots/subread_lengths.png" width="500"/>](plots/subread_lengths.png) | 
+|<span style="color:blue; text-align:center; vertical-align: center">**Estimated Insert Length ** <span style="color:black; text-align:center; vertical-align: center; "> Plots the number of reads against     the estimated insert length. \
+The Insert Size is the length of the double-stranded nucleic acid fragment in a SMRTbell template, excluding the hairpin adapters. | [[<img src="plots/insertLenDist0.png" width="500"/>](plots/insertLenDist0.png) | 
+|<span style="color:blue; text-align:center; vertical-align: center">**Control Polymerase RL ** <span style="color:black; text-align:center; vertical-align: center; "> Displays the Polymerase read length distribution of the control, if used | [<img src="plots/readlength_plot.png" width="500"/>](plots/readlength_plot.png)| 
+|<span style="color:blue; text-align:center; vertical-align: center">**Control Concordance ** \
+ <span style="color:black; text-align:center; vertical-align: center; "> Maps control reads against the known control reference and reports the concordance | [<img src="plots/concordance_plot.png" width="500"/>](plots/concordance_plot.png)|
+ |<span style="color:blue; text-align:center; vertical-align: center">**Loading Evaluation ** <span style="color:black; text-align:center; vertical-align: center; ">Displays the length distribution of unfiltered and filtered (polymerase) reads. |[<img src="plots/raw_read_length_plot.png" width="500"/>](plots/raw_read_length_plot.png)| 
+|<span style="color:blue; text-align:center; vertical-align: center">**Base Υield Density ** \
+    <span style="color:black; text-align:center; vertical-align: center; "> Displays the number of bases sequenced in the collection, according to the length of the read in which they were observed. Regions of the graph corresponding to bases found in reads  longer than the N50 and N95 values are shaded in medium and dark blue, respectively.| [<img src="plots/base_yield_plot.png" width="500"/>](plots/base_yield_plot.png)|
+|<span style="color:blue; text-align:center; vertical-align: center">**Insert Length Versus Read Length** <span style="color:black; text-align:center; vertical-align: center; "> Displays a density plot of reads, hexagonally binned according to their HQ Read Length and median subread length. For very large insert libraries, most reads consist of a single subread and will fall along the diagonal. For shorter inserts, subreads will be shorter than the HQ read length, and will appear as horizontal features.| [<img src="plots/hexbin_length_plot.png" width="500"/>](plots/hexbin_length_plot.png)|
   
-<table >
-  <tr>
-    <td> <span style="color:blue;  text-align:center;">**Polymerase Read Length** \
-    <span style="color:black; text-align:center; vertical-align: center"> Plots the number of reads against the polymerase read length. \
-Polymerase read represents a sequence of nucleotides incorporated by the DNA polymerase while reading a template, such as a circular SMRTbell™ template. 
-    </td> 
-    <td>[<img src="plots/readLenDist0.png" width="500"/>](plots/readLenDist0.png) </td>
-  </tr>
-  <tr>
-    <td> <span style="color:blue; text-align:center; ">**Subraed Length ** \
-    <span style="color:black; text-align:center; vertical-align: center; "> Plots the number of reads against      the against the subread length, in base pairs. \
-     Subread contain a sequence from a single pass of a polymerase on a single strand of an insert within a SMRTbell™ template and no adapter sequences. 
-    </td>  
-    <td>[<img src="plots/subread_lengths.png" width="500"/>](plots/subread_lengths.png) </td>
-  </tr>
-  <tr>
-    <td> <span style="color:blue; text-align:center; ">**Estimated Insert Length ** \
-    <span style="color:black; text-align:center; vertical-align: center; "> Plots the number of reads against     the estimated insert length. \
-    The Insert Size is the length of the double-stranded nucleic acid fragment in a SMRTbell template, excluding the hairpin adapters. </td>
-    <td>[<img src="plots/insertLenDist0.png" width="500"/>](plots/insertLenDist0.png) </td>
- </tr>
-  <tr>
-  <td> <span style="color:blue; text-align:center; ">**Control Polymerase RL ** \
-  <span style="color:black; text-align:center; vertical-align: center; "> Displays the Polymerase read length distribution of the control, if used.</td>
-  <td> [<img src="plots/readlength_plot.png" width="500"/>](plots/readlength_plot.png) </td>
-  </tr>
-  <tr>
-  <td> <span style="color:blue; text-align:center; ">**Control Concordance ** \
- <span style="color:black; text-align:center; vertical-align: center; "> Maps control reads against the known control reference and reports the concordance.</td>
-  <td> [<img src="plots/concordance_plot.png" width="500"/>](plots/concordance_plot.png)</td>
- </tr>
-  <tr>
-    <td> <span style="color:blue; text-align:center; ">**Loading Evaluation ** \
-    <span style="color:black; text-align:center; vertical-align: center; ">
-    Displays the length distribution of unfiltered and filtered (polymerase) reads. </td>
-    <td> [<img src="plots/raw_read_length_plot.png" width="500"/>](plots/raw_read_length_plot.png) </td>
-  </tr>
- <tr>
-  <td> <span style="color:blue; text-align:center; ">**Base Υield Density ** \
-    <span style="color:black; text-align:center; vertical-align: center; "> 
-    Displays the number of bases sequenced in the collection,
-    according to the length of the read in which they were observed.
-    Regions of the graph corresponding to bases
-    found in reads  longer than the N50 and N95 values are shaded in
-    medium and dark blue, respectively.</td> 
-    <td>[<img src="plots/base_yield_plot.png" width="500"/>](plots/base_yield_plot.png) </td>
-  </tr>
- <tr>
-    <td> <span style="color:blue; text-align:center; "> **Insert Length Versus Read Length** \
-    <span style="color:black; text-align:center; vertical-align: center; ">
-    Displays a density plot of reads, hexagonally binned according to their HQ Read Length and median
-    subread length. 
-    For very large insert libraries, most reads consist of
-    a single subread and will fall along the diagonal. For shorter inserts,
-    subreads will be shorter than the HQ read length, and will appear as
-    horizontal features. </td>
-    <td>[<img src="plots/hexbin_length_plot.png" width="500"/>](plots/hexbin_length_plot.png) </td>
-  </tr>
-  
-</table>
 
 For more information see here https://www.pacb.com/support/documentation/
