@@ -4,7 +4,7 @@
 
 
 [![Nextflow](https://img.shields.io/badge/nextflow-%E2%89%A50.32.0-brightgreen.svg)](https://www.nextflow.io/)
-[![Generic badge](https://img.shields.io/badge/SMRT Link-8.0.0-red.svg)](https://github.com/PacificBiosciences/pbreports/)
+[![Generic badge](https://img.shields.io/badge/SMRTLink-8.0.0-red.svg)](https://github.com/PacificBiosciences/pbreports/)
 [![MultiQC](https://img.shields.io/badge/MultiQC->1.7-blue.svg)](https://multiqc.info/)
 
 
