@@ -52,7 +52,7 @@ The output contains plots of an individual SMRT Cell. Clicking on an individual 
 
 |  desc      |  plot  |
 | ------ | ------ |
-| cell | cell |
+| **Polymerase Read Length** <span style="color:black; text-align:center; vertical-align: center"> Plots the number of reads against the polymerase read length. Polymerase read represents a sequence of nucleotides incorporated by the DNA polymerase while reading a template, such as a circular SMRTbell™ template.  | cell |
 | cell | cell | 
 
   
