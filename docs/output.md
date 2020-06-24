@@ -50,7 +50,8 @@ The output contains plots of an individual SMRT Cell. Clicking on an individual 
 
 |  Description      |  plot  |
 | ------ | ------ |
-|<span style="color:blue; text-align:center; vertical-align: center">**Polymerase Read Length**<span style="color:black; text-align:center; vertical-align: center"> Plots the number of reads against the polymerase read length. \ 
+|<span style="color:blue; text-align:center; vertical-align: center">**Polymerase Read Length**<span style="color:black; text-align:center; vertical-align: center"> Plots the number of reads against the polymerase read length.\ 
+
 Polymerase read represents a sequence of nucleotides incorporated by the DNA polymerase while reading a template, such as a circular SMRTbell™ template.| [<img src="plots/readLenDist0.png" width="500"/>](plots/readLenDist0.png)|
 |<span style="color:blue; text-align:center; vertical-align: center">**Subraed Length**<span style="color:black; text-align:center; vertical-align: center; "> Plots the number of reads against the against the subread length, in base pairs. Subread contain a sequence from a single pass of a polymerase on a single strand of an insert within a SMRTbell™ template and no adapter sequences.| [<img src="plots/subread_lengths.png" width="500"/>](plots/subread_lengths.png)| 
 |<span style="color:blue; text-align:center; vertical-align: center">**Estimated Insert Length**<span style="color:black; text-align:center; vertical-align: center; "> Plots the number of reads against the estimated insert length. The Insert Size is the length of the double-stranded nucleic acid fragment in a SMRTbell template, excluding the hairpin adapters.| [<img src="plots/insertLenDist0.png" width="500"/>](plots/insertLenDist0.png)| 
