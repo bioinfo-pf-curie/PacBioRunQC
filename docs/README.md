@@ -1,4 +1,4 @@
-# **pbRunQC **
+# **pbRunQC**
 
 **Institut Curie - Nextflow PacBio Run_QC analysis pipeline**
 
