@@ -134,6 +134,15 @@ else if(params.dataSet){
 
 }
 
+
+if ( params.metadata ){
+   Channel
+       .fromPath( params.metadata )
+       .ifEmpty { exit 1, "Metadata file not found: ${params.metadata}" }
+       .set { ch_metadata }
+}
+
+
  
 // Header log info
 if ("${workflow.manifest.version}" =~ /dev/ ){
@@ -241,6 +250,7 @@ process multiqc {
   publishDir "${params.outdir}/MultiQC", mode: 'copy'
 
   input:
+  file metadata from ch_metadata.ifEmpty([])
   file multiqc_config from ch_multiqc_config
   file ('subreads_reports/*') from image.collect().ifEmpty([])
   file ('makeReport/*') from makereport_results.collect().ifEmpty([])
@@ -255,8 +265,12 @@ process multiqc {
 
   script:
   rtitle = custom_runName ? "--title \"$custom_runName\"" : ''
-  rfilename = custom_runName ? "--filename " + custom_runName + "_rawqc_report" : '--filename rawqc_report'
+  rfilename = custom_runName ? "--filename " + custom_runName + "_pbRunQC_report" : '--filename pbRunQC_report'
+  metadata_opts = params.metadata ? "--metadata ${metadata}" : ""
+  splan_opts = params.samplePlan ? "--splan ${params.samplePlan}" : ""
+
   """
-  multiqc.sh
+  mqc_header.py --name "pbRunQC" --version ${workflow.manifest.version} ${metadata_opts} ${splan_opts} > multiqc-config-header.yaml
+  multiqc.sh ${rtitle} ${rfilename} multiqc-config-header.yaml ${multiqc_config} 
   """
 }
