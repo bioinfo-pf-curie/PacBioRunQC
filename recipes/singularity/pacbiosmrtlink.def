@@ -1,0 +1,18 @@
+Bootstrap: docker
+From: centos:7.8.2003
+
+
+%post
+    yum install -y which rsync net-tools wget && \
+       yum clean all
+    wget http://isiserver.curie.fr/smrtlink/smrtlink_8.0.0.80529.run && \
+       sh smrtlink_*.run  --rootdir /smrtlink --smrttools-only && \
+       rm smrtlink_*.run
+    ln -sfn /smrtlink/install/smrtlink-release_8.0.0.80529/bundles/smrttools/smrtcmds/bin/python2.7 /usr/bin/python2.7
+    sed -i '1s/^/#! \/usr\/bin\/python2.7\n/' /smrtlink/install/smrtlink-release_8.0.0.80529/bundles/smrttools/install/smrttools-release_8.0.0.80502/private/pacbio/pythonpkgs/pbreports/lib/python2.7/site-packages/pbreports/report/subreads_reports.py
+    chmod +x /smrtlink/install/smrtlink-release_8.0.0.80529/bundles/smrttools/install/smrttools-release_8.0.0.80502/private/pacbio/pythonpkgs/pbreports/lib/python2.7/site-packages/pbreports/report/subreads_reports.py
+    ln -sf /smrtlink/install/smrtlink-release_8.0.0.80529/bundles/smrttools/install/smrttools-release_8.0.0.80502/private/pacbio/pythonpkgs/pbreports/lib/python2.7/site-packages/pbreports/report/subreads_reports.py /usr/local/bin/subreads_reports.py
+
+%environment
+    export LC_ALL=C
+    export PYTHONPATH=/smrtlink/install/smrtlink-release_8.0.0.80529/bundles/smrttools/install/smrttools-release_8.0.0.80502/private/pacbio/pythonpkgs/pbreports/lib/python2.7/site-packages:$PYTHONPATH
