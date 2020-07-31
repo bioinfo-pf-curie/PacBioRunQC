@@ -200,6 +200,7 @@ workflow.onComplete {
  */
 
 process subreads_reports {
+    label 'pacbioSmrtlink'
     tag "$name (raw)"
     publishDir "${params.outdir}/subreads_reports", mode: 'copy'
 
@@ -247,6 +248,7 @@ process makeReport {
  *  MultiQC
 */
 process multiqc {
+  label 'multiqc'
   publishDir "${params.outdir}/MultiQC", mode: 'copy'
 
   input:
