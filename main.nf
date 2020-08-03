@@ -224,6 +224,7 @@ process subreads_reports {
  * STEP 2 - Make Report for MultiQC
 */
 process makeReport {
+   label 'python'
     //tag "$name (raw)"
     publishDir "${params.outdir}/makeReport", mode: 'copy'
 
