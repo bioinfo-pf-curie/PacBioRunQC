@@ -20,9 +20,7 @@ class smrtlink_report(object):
         parser.add_option("--c", "--control", dest="control", default="", help="control format json")
         parser.add_option("--o", "--output", dest="output", default="")
         parser.add_option("--n", "--name", dest="name", default="", help="")
-        ...
         (options, args) = parser.parse_args()
-        ...
         args = []
         args = self.check_options(options.subreads, options.productivity, options.lengthsfile, options.adapter, options.control, options.output, options.name)
         return(args)
