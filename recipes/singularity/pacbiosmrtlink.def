@@ -3,7 +3,7 @@ From: centos:7.8.2003
 
 
 %post
-    yum install -y which rsync net-tools wget && \
+    yum install -y which rsync net-tools wget ImageMagick && \
        yum clean all
     wget http://isiserver.curie.fr/smrtlink/smrtlink_8.0.0.80529.run && \
        sh smrtlink_*.run  --rootdir /smrtlink --smrttools-only && \
