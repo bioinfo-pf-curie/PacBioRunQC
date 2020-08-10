@@ -93,14 +93,14 @@ class smrtlink_report(object):
 
               if item.tag == "{http://pacificbiosciences.com/PacBioCollectionMetadata.xsd}ControlKit" :
                  #kit_name = item.attrib.get("Name").split("Control")[0]
-                 kit_version = item.attrib.get("Version")
+                 kit_version = item.attrib.get("Version").strip()
 
               if item.tag == "{http://pacificbiosciences.com/PacBioCollectionMetadata.xsd}RunDetails":
                  #print(item.tag, item.attrib, item[3].text)
                  run_stampname = item[0].text
                  run_name = item[1].text
                  createdby = item[2].text
-                 whencreated = item[3].text.split('T')[0]
+                 whencreated = item[3].text.split('T')[0].strip()
                  #print(run_stampname, run_name, createdby, whencreated)
 
               if item.tag == "{http://pacificbiosciences.com/PacBioCollectionMetadata.xsd}CollectionPathUri":
@@ -109,7 +109,7 @@ class smrtlink_report(object):
               if item.tag == "{http://pacificbiosciences.com/PacBioCollectionMetadata.xsd}WellSample":
                 # print(item.tag, item.attrib)
                  wellcell_name = item.attrib.get("Name")
-                 wellcell_des = item.attrib.get("Description").split(';')[1]
+                 wellcell_des = item.attrib.get("Description").split(';')[1].strip()
 
               if item.tag == "{http://pacificbiosciences.com/PacBioBaseDataModel.xsd}AutomationParameter":
                  if item.attrib.get("Name") == "MovieLength": 
@@ -117,7 +117,7 @@ class smrtlink_report(object):
 
               if item.tag == "{http://pacificbiosciences.com/PacBioCollectionMetadata.xsd}VersionInfo":
                  if item.attrib.get("Name") == "smrtlink":
-                    smrt_link_version = ".".join(item.attrib.get("Version").split('.')[0:2])
+                    smrt_link_version = ".".join(item.attrib.get("Version").split('.')[0:2]).strip()
 
 
            subreads_dict = dict(
@@ -138,7 +138,6 @@ class smrtlink_report(object):
                instrument_name = instrument_name
            )
 
-	
            return (subreads_dict, overview_dict)
 
         except ValueError: return False
@@ -317,6 +316,8 @@ class smrtlink_report(object):
 
 
     def write_result(self, dict, output):
+       
+      
        """ 
        This file is read by MultiQC.
        """

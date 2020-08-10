@@ -28,6 +28,5 @@ convert base_yield_plot.png readlength_plot.png  concordance_plot.png -append mq
 convert mqc_1_bis.png mqc_2_bis.png mqc_3_bis.png +append $1_mqc.png
 
 rm insertLenDist0.png readLenDist0.png subread_lengths.png base_yield_plot.png hexbin_length_plot.png concordance_plot.png readlength_plot.png raw_read_length_plot.png 
-rm concordance_plot.png readlength_plot.png control_mqc_bis.png
 rm  mqc_1_bis.png mqc_2_bis.png mqc_3_bis.png
 
