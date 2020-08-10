@@ -5,20 +5,20 @@ name=$1
 
 ### filter_stat
 
-convert $1/filter_stats_xml/insertLenDist0.png -gravity North -pointsize 80 -draw "text -30,10 'Estimated Insert Length'" insertLenDist0.png
-convert $1/filter_stats_xml/readLenDist0.png -gravity North -pointsize 80 -draw "text -30,10 'Polymerase Read Length'" readLenDist0.png
-convert $1/filter_stats_xml/subread_lengths.png -gravity North -pointsize 80 -draw "text -30,10 'Subread Length'" subread_lengths.png
-convert $1/filter_stats_xml/base_yield_plot.png -gravity North -pointsize 80 -draw "text -30,10 'Base Yield Density'" base_yield_plot.png
-convert $1/filter_stats_xml/hexbin_length_plot.png -gravity North -pointsize 80 -draw "text -30,10 'Insert Length Versus Read Length'" hexbin_length_plot.png
+convert $1/filter_stats_xml/insertLenDist0.png -gravity North -pointsize 80 -draw "text 0,100 'Estimated Insert Length'" insertLenDist0.png
+convert $1/filter_stats_xml/readLenDist0.png -gravity North -pointsize 80 -draw "text 0,100 'Polymerase Read Length'" readLenDist0.png
+convert $1/filter_stats_xml/subread_lengths.png -gravity North -pointsize 80 -draw "text 0,100 'Subread Length'" subread_lengths.png
+convert $1/filter_stats_xml/base_yield_plot.png -gravity North -pointsize 80 -draw "text 0,100 'Base Yield Density'" base_yield_plot.png
+convert $1/filter_stats_xml/hexbin_length_plot.png -gravity North -pointsize 80 -draw "text 0,100 'Insert Length Versus Read Length'" hexbin_length_plot.png
 
 ###### Loading
 
-convert $1/loading_xml/raw_read_length_plot.png -gravity North -pointsize 80 -draw "text -30,10 'Loading Evaluation'" raw_read_length_plot.png
+convert $1/loading_xml/raw_read_length_plot.png -gravity North -pointsize 80 -draw "text 0,100 'Loading Evaluation'" raw_read_length_plot.png
 
 ###### control
 
-convert $1/control/concordance_plot.png -gravity North -pointsize 80 -draw "text -30,10 'Control Concordance'" concordance_plot.png
-convert $1/control/readlength_plot.png -gravity North -pointsize 80 -draw "text -30,10 'Control Polymerase RL'" readlength_plot.png
+convert $1/control/concordance_plot.png -gravity North -pointsize 80 -draw "text 0,100 'Control Concordance'" concordance_plot.png
+convert $1/control/readlength_plot.png -gravity North -pointsize 80 -draw "text 0,100 'Control Polymerase RL'" readlength_plot.png
 
 ###### final image
 
