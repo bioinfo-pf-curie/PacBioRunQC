@@ -3,7 +3,7 @@
 ##################################################################
 custom_logo_url: https://science.curie.fr/plateformes/sequencage-adn-haut-debit-ngs/
 custom_logo_title: Institut Curie
-output_fn_name: 'pbRunQC_report.html'
+output_fn_name: 'PacBioRunQC_report.html'
 
 custom_data:
     subreads_stat:

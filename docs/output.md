@@ -7,7 +7,7 @@ This document describes the outputs produced by the pipeline. All the plots are 
 The pipeline is built using [Nextflow](https://www.nextflow.io/)
 and processes data using the following steps:
 
-* [RUN_QC](#SMART Link RUN QC ) - monitor performance trends and perform run QC
+* [RUN_QC](#SMART Link RUN QC ) - monitor performance trends and perform Run QC
 * [MultiQC](#multiqc) - aggregate report, describing results of the whole pipeline
 
 ### RUN QC
@@ -34,7 +34,7 @@ The pipeline has special steps which allow the software versions used to be repo
 
 **Output directory: `results/multiqc`**
 
-* `pbRunQC_report.html`
+* `PacBioRunQC_report.html`
     * MultiQC report - a standalone HTML file that can be viewed in your web browser
 * `multiqc_data/`
     * Directory containing parsed statistics from the different tools used in the pipeline

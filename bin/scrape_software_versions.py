@@ -23,7 +23,7 @@ for k, v in regexes.items():
 print ('''
 id: 'software-versions'
 section_name: 'Software Versions'
-section_href: 'https://github.com/pbRunQC'
+section_href: 'https://github.com/PacBioRunQC'
 plot_type: 'html'
 description: 'are collected at run time from the software output.'
 data: |

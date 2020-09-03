@@ -1,4 +1,4 @@
-# **pbRunQC**
+# **PacBioRunQC**
 
 **Institut Curie - Nextflow PacBio Run_QC analysis pipeline**
 
@@ -10,7 +10,7 @@
 
 ### **Introduction**
    
-The main goal of the `pbRunQC` pipeline is to perform quality controls on long reads sequencing reads (PacBio), regardless the sequencing application.
+The main goal of the `PacBioRunQC` pipeline is to perform quality controls on long reads sequencing reads (PacBio), regardless the sequencing application.
 It was designed to help sequencing facilities to validate the quality of the generated data.
 
 The pipeline is built using [Nextflow](https://www.nextflow.io), a workflow tool to run tasks across multiple compute infrastructures in a very portable manner. 
@@ -26,7 +26,7 @@ The pipeline is built using [Nextflow](https://www.nextflow.io), a workflow tool
 ```bash
 N E X T F L O W  ~  version 19.04.0
 Launching `main.nf` [cheesy_fermi] - revision: 8038a4770c
-pbRunQC v1.0dev
+PacBioRunQC v1.0dev
 =======================================================
 Usage:
 nextflow run main.nf --dataSet dataSet

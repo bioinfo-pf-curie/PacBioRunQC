@@ -12,9 +12,9 @@ The fact that you are presently reading this means that you have had knowledge o
 
 /*
 ========================================================================================
-                         pbRunQC
+                         PacBioRunQC
 ========================================================================================
- pbRunQC Pipeline.
+ PacBioRunQC Pipeline.
  #### Homepage / Documentation
  https://https://gitlab.curie.fr/ngs-research/pacbio-smrtlink
 ----------------------------------------------------------------------------------------
@@ -28,7 +28,7 @@ def helpMessage() {
     }
 
     log.info"""
-    pbRunQC v${workflow.manifest.version}
+    PacBioRunQC v${workflow.manifest.version}
     ==========================================================
 
     Usage:
@@ -152,10 +152,10 @@ if ("${workflow.manifest.version}" =~ /dev/ ){
 
 log.info """=======================================================
 
-pbRunQC v${workflow.manifest.version}"
+PacBioRunQC v${workflow.manifest.version}"
 ======================================================="""
 def summary = [:]
-summary['Pipeline Name']  = 'pbRunQC'
+summary['Pipeline Name']  = 'PacBioRunQC'
 summary['Pipeline Version'] = workflow.manifest.version
 summary['Run Name']     = custom_runName ?: workflow.runName
 summary['Metadata']     = params.metadata
@@ -181,7 +181,7 @@ log.info "========================================="
 
 /* Creates a file at the end of workflow execution */
 workflow.onComplete {
-  File woc = new File("${params.outdir}/pbRunQC.workflow.oncomplete.txt")
+  File woc = new File("${params.outdir}/PacBioRunQC.workflow.oncomplete.txt")
   Map endSummary = [:]
   endSummary['Completed on'] = workflow.complete
   endSummary['Duration']     = workflow.duration
@@ -262,18 +262,18 @@ process multiqc {
   !params.skip_multiqc
 
   output:
-  file "pbRunQC_report.html" into multiqc_report
+  file "PacBioRunQC_report.html" into multiqc_report
   file "*_data"
 
 
   script:
   rtitle = custom_runName ? "--title \"$custom_runName\"" : ''
-  rfilename = custom_runName ? "--filename " + custom_runName + "_pbRunQC_report" : '--filename pbRunQC_report'
+  rfilename = custom_runName ? "--filename " + custom_runName + "_PacBioRunQC_report" : '--filename PacBioRunQC_report'
   metadata_opts = params.metadata ? "--metadata ${metadata}" : ""
   splan_opts = params.samplePlan ? "--splan ${params.samplePlan}" : ""
 
   """
-  mqc_header.py --name "pbRunQC" --version ${workflow.manifest.version} ${metadata_opts} ${splan_opts} > multiqc-config-header.yaml
+  mqc_header.py --name "PacBioRunQC" --version ${workflow.manifest.version} ${metadata_opts} ${splan_opts} > multiqc-config-header.yaml
   multiqc.sh ${rtitle} ${rfilename} multiqc-config-header.yaml ${multiqc_config} 
   """
 }
