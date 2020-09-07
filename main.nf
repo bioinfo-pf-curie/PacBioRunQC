@@ -253,6 +253,7 @@ process multiqc {
   publishDir "${params.outdir}/MultiQC", mode: 'copy'
 
   input:
+  file samplePlan from Channel.of( params.samplePlan ? file("$params.samplePlan") : "")
   file metadata from ch_metadata.ifEmpty([])
   file multiqc_config from ch_multiqc_config
   file ('subreads_reports/*') from image.collect().ifEmpty([])
@@ -270,7 +271,7 @@ process multiqc {
   rtitle = custom_runName ? "--title \"$custom_runName\"" : ''
   rfilename = custom_runName ? "--filename " + custom_runName + "_PacBioRunQC_report" : '--filename PacBioRunQC_report'
   metadata_opts = params.metadata ? "--metadata ${metadata}" : ""
-  splan_opts = params.samplePlan ? "--splan ${params.samplePlan}" : ""
+  splan_opts = params.samplePlan ? "--splan ${samplePlan}" : ""
 
   """
   mqc_header.py --name "PacBioRunQC" --version ${workflow.manifest.version} ${metadata_opts} ${splan_opts} > multiqc-config-header.yaml
