@@ -214,7 +214,7 @@ process subreads_reports {
     script:
     prefix = reads.toString() - ~/(\.subreadset.xml)?$/
     """
-    subreads_report.sh $prefix $reads $name
+    subreads_report.sh $reads $name
     create_images.sh $name
     """
 }
