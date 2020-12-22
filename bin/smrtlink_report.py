@@ -109,8 +109,9 @@ class smrtlink_report(object):
               if item.tag == "{http://pacificbiosciences.com/PacBioCollectionMetadata.xsd}WellSample":
                 # print(item.tag, item.attrib)
                  wellcell_name = item.attrib.get("Name")
-                 ##wellcell_des = item.attrib.get("Description").split(';')[1].strip()
-                 wellcell_des = re.split('(?<!\(.);(?!.\))[0]', item.attrib.get("Description"))
+                 wellcell_des = item.attrib.get("Description").strip()
+#                 wellcell_des = item.attrib.get("Description").split(';')[1].strip()
+#                 #wellcell_des = re.split('(?<!\(.);(?!.\))[0]', item.attrib.get("Description"))
 
               if item.tag == "{http://pacificbiosciences.com/PacBioBaseDataModel.xsd}AutomationParameter":
                  if item.attrib.get("Name") == "MovieLength": 
