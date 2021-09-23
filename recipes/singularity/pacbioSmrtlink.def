@@ -3,7 +3,7 @@ From: centos:7.8.2003
 
 
 %post
-    SMRTLINK_VERSION=9.0.0.92188 && \
+    SMRTLINK_VERSION=10.1.0.119588 && \
     yum install -y which rsync net-tools wget ImageMagick && \
        yum clean all
     wget http://isiserver.curie.fr/smrtlink/smrtlink_${SMRTLINK_VERSION}.run && \
