@@ -89,7 +89,7 @@ if(params.samplePlan){
          .map{row -> [
               def name = row[0], 
               def reads = file(row[1] + '.subreadset.xml'),
-              //def adapters = file(row[1] +  '.adapters.fasta'),
+              def adapters = file(row[1] +  '.adapters.fasta'),
               def scraps = file(row[1] +  '.scraps.bam'),
               def scraps_pbi = file(row[1] +  '.scraps.bam.pbi'),
               def sts = file(row[1] +  '.sts.xml'),
@@ -114,7 +114,7 @@ else if(params.dataSet){
             .map{row -> [
               def name = file(params.dataSet).name.toString().tokenize('.').get(0),
               def reads = file(params.dataSet + '.subreadset.xml'),
-              //def adapters = file(params.dataSet +  '.adapters.fasta'),
+              def adapters = file(params.dataSet +  '.adapters.fasta'),
               def scraps = file(params.dataSet + '.scraps.bam'),
               def scraps_pbi = file(params.dataSet +  '.scraps.bam.pbi'),
               def sts = file(params.dataSet +  '.sts.xml'),
@@ -205,7 +205,7 @@ process subreads_reports {
     publishDir "${params.outdir}/subreads_reports", mode: 'copy'
 
     input:
-    set val(name), file(reads), file(scraps), file(scraps_pbi), file(sts), file(subreads), file(subreads_bpi) from dataset_files
+    set val(name), file(reads), file(adapters), file(scraps), file(scraps_pbi), file(sts), file(subreads), file(subreads_bpi) from dataset_files
      
     output:
     set val(name), file ("${name}") into reports
