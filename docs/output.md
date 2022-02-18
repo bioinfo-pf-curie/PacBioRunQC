@@ -14,7 +14,7 @@ and processes data using the following steps:
 
 The goal of curie/RUN QC pipeline is to assess the overall quality of the long reads sequencing (PacBio).
 
-The run directory output by the Sequel IIe System includes a subdirectory for each collection (SMRT Cell) associated with a sample well. The option for generate automatically HiFi Reads is one of the main advantages of Sequel IIe System. Sequel IIe System on_instrument CCS(OICCS) outputs a reads.bam file containing one read per productive ZMW and the subreads.bam, scraps.bam and scraps.bam.pbi files are no longer generated or available. In the The collection subdirectory includes the following output files:
+The run directory output by the Sequel IIe System includes a subdirectory for each collection (SMRT Cell) associated with a sample well. The option for generate automatically HiFi Reads is one of the main advantages of Sequel IIe System. Sequel IIe System on_instrument CCS (OICCS) outputs a reads.bam file containing one read per productive ZMW and the subreads.bam, scraps.bam and scraps.bam.pbi files are no longer generated or available. In the The collection subdirectory includes the following output files:
 
 
    |    output | skip_OICCS | OICCS|
