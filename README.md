@@ -43,11 +43,11 @@ Other options:
    --metadata 'FILE'             Add metadata file for multiQC report
 
 Skip options:
+   --skip_oiccs      		 Skip automatic HiFi reads generation with Sequel IIe 
    --skip_multiqc                Skip MultiQC step
-
+   
 ==========================================================
 Available Profiles
-
    -profile test                Set up the test dataset
 
 ```
@@ -63,7 +63,7 @@ The pipeline can be run on any infrastructure from a list of input files or from
 See the conf/test.conf to set your test dataset.
 
 ```
-nextflow run main.nf -profile test
+nextflow run main.nf -profile singularity,test --singularityImagePath SANGULARITYIMAGE_PATH
 
 ```
 

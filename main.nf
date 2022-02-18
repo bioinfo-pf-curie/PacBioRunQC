@@ -46,6 +46,7 @@ def helpMessage() {
       --metadata 'FILE'             Add metadata file for multiQC report
 
     Skip options:
+      --skip_OICCS                  Skip Automatic HiFi reads generation with Sequel IIe
       --skip_multiqc                Skip MultiQC step
 
     =======================================================
@@ -82,19 +83,23 @@ if ((params.dataSet && params.samplePlan) || (params.dataSet && params.samplePla
 }
 
 
-if(params.samplePlan){
+if(params.samplePlan && params.skip_OICCS){
       Channel
          .from(file("${params.samplePlan}"))
          .splitCsv(header: false)
          .map{row -> [
-              def name = row[0], 
-              def reads = file(row[1] + '.subreadset.xml'),
+              def name = row[0],
+              def dataset = file(row[1] + '.subreadset.xml'),
+              def sts = file(row[1] +  '.sts.xml'),
+              def reads = file(row[1] +  '.subreads.bam'),
+              def reads_pbi = file(row[1] + '.subreads.bam.pbi'),
+              def ccs_log = "Sequel2 doesn't generate ccs.",
+              def ccs_rep_j = "Sequel2 doesn't generate ccs.",
+              def ccs_rep_t = "Sequel2 doesn't generate ccs.",
+              def zmw_metrics = "Sequel2 doesn't generate zmw_metrics.",
               def adapters = file(row[1] +  '.adapters.fasta'),
               def scraps = file(row[1] +  '.scraps.bam'),
               def scraps_pbi = file(row[1] +  '.scraps.bam.pbi'),
-              def sts = file(row[1] +  '.sts.xml'),
-              def subreads = file(row[1] +  '.subreads.bam'),
-              def subreads_pbi = file(row[1] + '.subreads.bam.pbi')
               ]}
          .set{dataset_files}
 
@@ -103,23 +108,27 @@ if(params.samplePlan){
          .splitCsv(header: false)
          .map{row -> [
               def name = row[0],
-              def reads = file(row[1] + '.subreadset.xml')
+              def dataset = file(row[1] + '.subreadset.xml')
               ]}
          .set{read_files_reports}
 }
-else if(params.dataSet){
+else if(params.dataSet && params.skip_OICCS){
         Channel
             .from(params.dataSet)
             .ifEmpty { exit 1, "params.dataSet was empty - no input files supplied" }
             .map{row -> [
               def name = file(params.dataSet).name.toString().tokenize('.').get(0),
-              def reads = file(params.dataSet + '.subreadset.xml'),
-              def adapters = file(params.dataSet +  '.adapters.fasta'),
-              def scraps = file(params.dataSet + '.scraps.bam'),
-              def scraps_pbi = file(params.dataSet +  '.scraps.bam.pbi'),
+              def dataset = file(params.dataSet + '.subreadset.xml'),
               def sts = file(params.dataSet +  '.sts.xml'),
-              def subreads = file(params.dataSet +  '.subreads.bam'),
-              def subreads_pbi = file(params.dataSet +  '.subreads.bam.pbi')
+              def reads = file(params.dataSet +  '.subreads.bam'),
+              def reads_pbi = file(params.dataSet + '.subreads.bam.pbi'),
+              def ccs_log = "Sequel2 doesn't generate ccs.",
+              def ccs_rep_j = "Sequel2 doesn't generate ccs.",
+              def ccs_rep_t = "Sequel2 doesn't generate ccs.",
+              def zmw_metrics = "Sequel2 doesn't generate zmw_metrics.",
+              def adapters = file(params.dataSet +  '.adapters.fasta'),
+              def scraps = file(params.dataSet +  '.scraps.bam'),
+              def scraps_pbi = file(params.dataSet +  '.scraps.bam.pbi'),
               ]}
          .set{dataset_files}
 
@@ -127,13 +136,74 @@ else if(params.dataSet){
             .from(params.dataSet)
             .map{row -> [
               def name = file(params.dataSet).name.toString().tokenize('.').get(0), 
-              def reads = file(params.dataSet + '.subreadset.xml')
+              def dataset = file(params.dataSet + '.subreadset.xml')
               ]}
          .groupTuple()
          .set{read_files_reports}
-
 }
 
+// For Sequel2e
+
+if(params.samplePlan && !params.skip_OICCS){
+      Channel
+         .from(file("${params.samplePlan}"))
+         .splitCsv(header: false)
+         .map{row -> [
+              def name = row[0],
+              def dataset = file(row[1] + '.consensusreadset.xml'),
+              def sts = file(row[1] +  '.sts.xml'),
+              def reads = file(row[1] +  '.reads.bam'),
+              def reads_pbi = file(row[1] +  '.reads.bam.pbi'),
+              def ccs_log = file(row[1] +  '.ccs.log'),
+              def ccs_rep_j = file(row[1] +  '.ccs_reports.json'),
+              def ccs_rep_t = file(row[1] +  '.ccs_reports.txt'),
+              def zmw_metrics = file(row[1] +  '.zmw_metrics.json.gz'),
+              def adapters ="Sequel2e doesn't generate adapters.",
+              def scraps = "Sequel2e doesn't generate scraps.",
+              def scraps_pbi = "Sequel2e doesn't generate scraps_pbi.",              
+              ]}
+         .set{dataset_files}
+
+         Channel
+         .from(file("${params.samplePlan}"))
+         .splitCsv(header: false)
+         .map{row -> [
+              def name = row[0],
+              def dataset = file(row[1] + '.consensusreadset.xml')
+              ]}
+         .set{read_files_reports}
+}
+else if(params.dataSet && !params.skip_OICCS){
+        Channel
+            .from(params.dataSet)
+            .ifEmpty { exit 1, "params.dataSet was empty - no input files supplied" }
+            .map{row -> [
+              def name = file(params.dataSet).name.toString().tokenize('.').get(0),
+              def dataset = file(params.dataSet + '.consensusreadset.xml'), 
+              def sts = file(params.dataSet +  '.sts.xml'),
+              def reads = file(params.dataSet +  '.reads.bam'),
+              def raeds_pbi = file(params.dataSet + '.reads.bam.pbi'),
+              def ccs_log = file(params.dataSet +  '.ccs.log'),
+              def ccs_rep_j = file(params.dataSet +  '.ccs_reports.json'),
+              def ccs_rep_t = file(params.dataSet +  '.ccs_reports.txt'),
+              def zmw_metrics = file(params.dataSet +  '.zmw_metrics.json.gz'),
+              def adapters ="Sequel2e doesn't generate adapters.",
+              def scraps = "Sequel2e doesn't generate scraps.",
+              def scraps_pbi = "Sequel2e doesn't generate scraps_pbi.",
+              ]}
+         .set{dataset_files}
+
+        Channel
+            .from(params.dataSet)
+            .map{row -> [
+              def name = file(params.dataSet).name.toString().tokenize('.').get(0),
+              def dataset = file(params.dataSet + '.consensusreadset.xml')
+              ]}
+         .groupTuple()
+         .set{read_files_reports}
+}
+
+//
 
 if ( params.metadata ){
    Channel
@@ -164,6 +234,7 @@ if (params.samplePlan) {
 }else{
    summary['DataSet']        = params.dataSet
 }
+summary['On Instrument CCS']   = params.skip_OICCS ? 'No' : 'Yes'
 summary['Max Memory']   = params.max_memory
 summary['Max CPUs']     = params.max_cpus
 summary['Max Time']     = params.max_time
@@ -197,28 +268,36 @@ workflow.onComplete {
 
 /*
  * STEP 1 - RUN_QC
- */
-
+*/
 process subreads_reports {
-    label 'pacbioSmrtlink'
+    label 'pacbiosmrtlink_sequel2'
     tag "$name (raw)"
     publishDir "${params.outdir}/subreads_reports", mode: 'copy'
 
     input:
-    set val(name), file(reads), file(adapters), file(scraps), file(scraps_pbi), file(sts), file(subreads), file(subreads_bpi) from dataset_files
-     
+    set val(name), file(dataset), file (sts), file(reads), file(reads_pbi), \
+        file(ccs_log), file(ccs_rep_j), file(ccs_rep_t), file(zmw_metrics),  \
+        file(adapters), file (scraps), file(scraps_pbi) \
+        from dataset_files
+
     output:
-    set val(name), file ("${name}") into reports
-    file "${name}_mqc.png" into image
+    set val(name), file ("${name}") into reports, image
 
     script:
-    prefix = reads.toString() - ~/(\.subreadset.xml)?$/
+    if (!params.skip_OICCS) {
+    prefix = dataset.toString() - ~/(\.consensusreadset.xml)?$/
     """
-    subreads_report.sh $reads $name
-    create_images.sh $name
+    subreads_report.sh $dataset $name 1
+    create_images.sh $name 1
     """
+    } else {
+    prefix = dataset.toString() - ~/(\.subreadset.xml)?$/
+    """
+    subreads_report.sh $dataset $name 0
+    create_images.sh $name 0
+    """
+    }
 }
-
 
 /*
  * STEP 2 - Make Report for MultiQC
@@ -229,19 +308,27 @@ process makeReport {
     publishDir "${params.outdir}/makeReport", mode: 'copy'
 
     input:
-    set val(name), file(reads), file ("${name}") from read_files_reports.join(reports)
+    set val(name), file(dataset), file ("${name}") from read_files_reports.join(reports)
 
     output:
     file "*.txt" into makereport_results
 
     script:
-    prefix = reads.toString() - ~/(\.subreadset.xml)?$/
+    if (!params.skip_OICCS) {
+    prefix = dataset.toString() - ~/(\.consensusreadset.xml)?$/
     """
-    smrtlink_report.py --s $reads --p $name/loading_xml/loading_xml.json \\
-                       --l $name/filter_stats_xml/filter_stats_xml.json  \\
-                       --a $name/adapter_xml/adapter_xml.json            \\
-                       --c $name/control/control.json --o $prefix --n $name
+    smrtlink_report.py --s $dataset --m $name/*.txt \\
+                                --o $prefix --n $name
     """
+    } else {
+    prefix = dataset.toString() - ~/(\.subreadset.xml)?$/
+    """
+    smrtlink_report.py --s $dataset --p $name/loading_xml/loading_xml.json \\
+                                --l $name/filter_stats_xml/filter_stats_xml.json  \\
+                                --a $name/adapter_xml/adapter_xml.json            \\
+                                --c $name/control/control.json --o $prefix --n $name
+    """
+    }
 }
 
 
@@ -250,7 +337,7 @@ process makeReport {
 */
 process multiqc {
   label 'multiqc'
-  publishDir "${params.outdir}/MultiQC", mode: 'copy'
+  publishDir "${params.outdir}/multiqc", mode: 'copy'
 
   input:
   file samplePlan from Channel.of( params.samplePlan ? file("$params.samplePlan") : "")
@@ -275,6 +362,7 @@ process multiqc {
 
   """
   mqc_header.py --name "PacBioRunQC" --version ${workflow.manifest.version} ${metadata_opts} ${splan_opts} > multiqc-config-header.yaml
-  multiqc.sh ${rtitle} ${rfilename} multiqc-config-header.yaml ${multiqc_config} 
+  multiqc.sh ${rtitle} ${rfilename} multiqc-config-header.yaml ${multiqc_config}
+  
   """
 }

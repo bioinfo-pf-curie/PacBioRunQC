@@ -8,6 +8,7 @@
     * [`profile`](#profile)
     * [`dataSet`](#dataset)
 * [Other command line parameters](#other-command-line-parameters)
+    * [`skip_OICCS`](#other-command-line-parameters)
     * [`skip_multiqc`](#other-command-line-parameters)
     * [`outdir`](#outdir)
     * [`name`](#name)
@@ -60,15 +61,30 @@ Use this to specify the location of your input SubreadSet XML dataset, which con
 ```bash
 --dataSet 'path/to/dataset'
 ```
-where the following files exist:
-<filename>.subreadset.xml
-<filename>.adapters.fasta
-<filename>.scraps.bam
-<filename>.sts.xml
-<filename>.subreads.bam.pbi
-<filename>.metadata.xml
-<filename>.scraps.bam.pbi
-<filename>.subreads.bam
+The goal of curie/RUN QC pipeline is to assess the overall quality of the long reads sequencing (PacBio).
+
+The run directory output by the Sequel IIe System includes a subdirectory for each collection (SMRT Cell) associated with a sample well. The option for generate automatically HiFi Reads is one of the main advantages of Sequel IIe System. Sequel IIe System on_instrument CCS(OICCS) outputs a reads.bam file containing one read per productive ZMW and the subreads.bam, scraps.bam and scraps.bam.pbi files are no longer generated or available. In the The collection subdirectory includes the following output files:
+
+|                                     | skip_OICCS |  OICCS    |
+|--------------------------------------------------|-----------|
+| `<filename>`.subreadset.xml         |  &#x2611;  |           |
+| `<filename>`.adapters.fasta         |  &#x2611;  |           |
+| `<filename>`.subreads.bam           |  &#x2611;  |           |
+| `<filename>`.subreads.bam.pbi       |  &#x2611;  |           |
+| `<filename>`.metadata.xml           |  &#x2611;  |           |
+| `<filename>`.scraps.bam             |  &#x2611;  |           |
+| `<filename>`.scraps.bam.pbi         |  &#x2611   |           |
+| `<filename>`.sts.xml                |  &#x2611;  | &#x2611;  |
+| `<filename>`.consensusreadset.xml   |            | &#x2611;  |
+| `<filename>`.reads.bam              |            | &#x2611;  |
+| `<filename>`.reads.bam.pbi          |            | &#x2611;  |
+| `<filename>`.zmw_metrics.json.gz    |            | &#x2611;  |
+| `<filename>`.ccs.log                |            | &#x2611;  |
+| `<filename>`.ccs_reports.json       |            | &#x2611;  |
+| `<filename>`.ccs_reports.txt        |            | &#x2611;  |
+
+
+> **NB:** The reads.bam file contains HiFi reads and should not be used unfiltered as input for third-party tools that expected >=Q20 sequencing data.
 
 
 Please note that the path must be enclosed in quotes.
@@ -78,6 +94,8 @@ Please note that the path must be enclosed in quotes.
 The pipeline contains diffrent steps. Sometimes, it may not be desirable to run all of them if time and compute resources are limited.
 The following options make this easy:
 
+
+* `--skip_OICCS` -     Skip automatic HiFi reads generation with Sequel IIe
 * `--skip_multiqc` -     Skip MultiQC step
 
 ## Job resources

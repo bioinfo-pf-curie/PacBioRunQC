@@ -13,21 +13,23 @@ class smrtlink_report(object):
         usage = "usage: %prog [options] arg"
         parser = OptionParser(usage)
         parser.add_option("--s", "--subreads", dest="subreads", default="", help="subreadset format xml")
-        parser.add_option("--p", "--productivity", dest="productivity", default="", help="loading_xml format json")
-        parser.add_option("--l", "--lengthsfile", dest="lengthsfile", default="", help="filter_xml format json")   
-        parser.add_option("--a", "--adapter", dest="adapter", default="", help="adapter_xml format json") 
-        parser.add_option("--c", "--control", dest="control", default="", help="control format json")
+        parser.add_option("--p", "--productivity", dest="productivity", default="", help="loading_xml format json from Sequel_2")
+        parser.add_option("--l", "--lengthsfile", dest="lengthsfile", default="", help="filter_xml format json from Sequel_2")   
+        parser.add_option("--a", "--adapter", dest="adapter", default="", help="adapter_xml format json from Sequel_2")
+        parser.add_option("--c", "--control", dest="control", default="", help="control format json from Sequel_2")
+        parser.add_option("--m", "--metrics", dest="metrics", default="", help="summary metrics from Sequel_2e") 
         parser.add_option("--o", "--output", dest="output", default="")
         parser.add_option("--n", "--name", dest="name", default="", help="")
         (options, args) = parser.parse_args()
         args = []
-        args = self.check_options(options.subreads, options.productivity, options.lengthsfile, options.adapter, options.control, options.output, options.name)
+        args = self.check_options(options.subreads, options.productivity, options.lengthsfile, options.adapter, options.control, options.metrics, options.output, options.name)
         return(args)
 
-    def check_options(self, subreads, productivity, lengthsfile, adapter, control, output, name):
+    def check_options(self, subreads, productivity, lengthsfile, adapter, control, metrics, output, name):
         """
           Check arguments in command lign.
         """
+
         if subreads != "":
            subreads = subreads
         else:
@@ -46,19 +48,23 @@ class smrtlink_report(object):
         if control != "" :
            control = control
 
+        if metrics != "" :
+           metrics = metrics
+
         if output != "":
             output = output
         else:
             base = os.path.basename(subreads)
             output = os.path.splitext(base)[0].split('.subreadset')[0]
-
+        print(output)
+ 
         if name != "":
            name = name
         else:
            base = os.path.basename(subreads)
            name= os.path.splitext(base)[0].split('.subreadset')[0]
         args = []
-        args = (subreads, productivity, lengthsfile, adapter, control, output, name)
+        args = (subreads, productivity, lengthsfile, adapter, control, metrics, output, name)
         return(args)
 
     def parse_subreadset_file(self, subreads, name): 
@@ -205,13 +211,11 @@ class smrtlink_report(object):
         """
           parsing filter_stats.xml to extract lengths.
         """
-
         try:
            with open(lengthsfile) as json_file:
               data = json.load(json_file)
               #print(data)
               for i, value  in enumerate(data['attributes']):
-                    #print(value)
                     if 'raw_data_report.nbases' in value.get("id"):
                            polymerase_read_bases =  value.get("value")
 
@@ -224,10 +228,10 @@ class smrtlink_report(object):
                     if 'raw_data_report.read_n50' in value.get("id"):
                            polymer_N50 = value.get("value")
  
-                    if 'raw_data_report.subread_length' in value.get("id"):
+                    if 'raw_data_report.read_length' in value.get("id"):
                            subread_Length = value.get("value")
 
-                    if 'raw_data_report.subread_n50' in value.get("id"):
+                    if 'raw_data_report.read_n50' in value.get("id"):
                            subread_N50 = value.get("value")
 
                     if 'raw_data_report.insert_length' in value.get("id"):
@@ -315,7 +319,149 @@ class smrtlink_report(object):
            return control_dict
 
        except ValueError: return False
+   
 
+    def parse_metrics_file(self, metrics, name):
+        """
+          parsing summary metrics from Sequel_2e.
+        """
+        try:
+          with  open (metrics, "r") as fileHandler:
+            for line in fileHandler:
+               
+               ####CCS Analysis Report
+               if "HiFi Reads" in line.strip():
+                   hifi_reads = line.strip().split(":")[1]
+               if "HiFi Yield" in line.strip():
+                   hifi_yield = line.strip().split(":")[1]
+               if "HiFi Read Length" in line.strip():
+                   hifi_read_length_mean = line.strip().split(":")[1]
+               if "HiFi Read Quality" in line.strip():
+                   hifi_read_quality_median = line.strip().split(":")[1]
+               if "HiFi Number of Passes" in line.strip():
+                   hifi_num_passes_mean = line.strip().split(":")[1]
+               if "<Q20 Reads" in line.strip():
+                   Q20_reads = line.strip().split(":")[1]
+               if "<Q20 Yield" in line.strip():
+                   Q20_yield = line.strip().split(":")[1]
+               if "<Q20 Read Length" in line.strip():
+                   Q20_read_length_mean = line.strip().split(":")[1]
+               if "<Q20 Read Quality" in line.strip():
+                   Q20_read_quality_median = line.strip().split(":")[1]
+
+               ####Adapter Report
+               if "Adapter Dimers" in line.strip():
+                   adapter_dimers = line.strip().split(":")[1]
+               if "Short Inserts" in line.strip():
+                   short_inserts = line.strip().split(":")[1]
+               if "Local Base Rate" in line.strip():
+                   local_base_rate = line.strip().split(":")[1]
+
+               ###Loading Report
+               if "Productive ZMWs" in line.strip():
+                   productive_zmws = int(line.strip().split(":")[1])
+               if "Productivity 0" in line.strip():
+                   productivity_0 = int(line.strip().split(":")[1])
+                   p0=(productivity_0/productive_zmws)*100
+               if "Productivity 1" in line.strip():
+                   productivity_1 = int(line.strip().split(":")[1])
+                   p1=(productivity_1/productive_zmws)*100
+               if "Productivity 2" in line.strip():
+                   productivity_2 = int(line.strip().split(":")[1])
+                   p2=(productivity_2/productive_zmws)*100
+
+               ###Control Report
+               if "Number of of Control Reads" in line.strip():
+                   nb_control_reads = line.strip().split(":")[1]
+               if "Control Read Length Mean" in line.strip():
+                   readlength_mean = line.strip().split(":")[1]
+               if "Control Read Concordance Mean" in line.strip():
+                   concordance_mean = line.strip().split(":")[1]
+               if "Control Read Concordance Mode" in line.strip():
+                   concordance_mode = line.strip().split(":")[1]
+
+               ####Raw Data Report
+               if "HiFi Reads" in line.strip():
+                   Hifi_reads = line.strip().split(":")[1]
+               if "Polymerase Read Bases" in line.strip():
+                   polymerase_read_bases = line.strip().split(":")[1]
+               if "Polymerase Reads" in line.strip():
+                   polymerase_reads = line.strip().split(":")[1]
+               if "Polymerase Read Length" in line.strip():
+                   polymerase_readlength = line.strip().split(":")[1]
+               if "Polymerase Read N50" in line.strip():
+                   polymerase_N50 = line.strip().split(":")[1]
+               if "Longest Subread Length" in line.strip():
+                   longest_subread_mean = line.strip().split(":")[1]
+               if "Longest Subread N50" in line.strip():
+                   longest_subread_N50 = line.strip().split(":")[1]
+               if "Unique Molecular Yield" in line.strip():
+                   unique_molecular_yield = line.strip().split(":")[1]
+
+
+          CCS_analysis_dict = dict(
+          Well = name,
+          HiFi_Reads = hifi_reads,
+          HiFi_Yield = hifi_yield,
+          HiFi_Read_Length_mean = hifi_read_length_mean,
+          HiFi_Read_Quality_median = hifi_read_quality_median,
+          HiFi_Number_of_Passes_mean = hifi_num_passes_mean,
+          Q20_Reads = Q20_reads,
+          Q20_Yield = Q20_yield,
+          Q20_Read_Length_mean = Q20_read_length_mean,
+          Q20_Read_Quality_median = Q20_read_quality_median
+          )
+
+          adapter_dict = dict(
+          Well = name,
+          Adapter_Dimers = adapter_dimers,
+          Short_Inserts = short_inserts,
+          Local_Base_Rate = local_base_rate
+          )
+
+          productivity_dict = dict(
+          Well = name,
+          P0 = p0,
+          P1 = p1,
+          P2 = p2
+          )
+
+
+          loading_dict = dict(
+          Well = name,
+          Productive_ZMWs = productive_zmws,
+          Productivity_0 = productivity_0,
+          P0 = p0,
+          Productivity_1 = productivity_1,
+          P1 = p1,
+          Productivity_2 = productivity_2,
+          P2 = p2
+          )
+
+          control_dict = dict(
+          Well = name,
+          Number_of_of_Control_Reads = nb_control_reads,
+          Control_Read_Length_Mean = readlength_mean,
+          Control_Read_Concordance_Mean = concordance_mean,
+          Control_Read_Concordance_Mode = concordance_mode
+          )
+
+          lengths_dict = dict(
+          Well = name,
+          Polymerase_Read_Bases = polymerase_read_bases,
+          Unique_Molecular_Yield = unique_molecular_yield,
+          Polymerase_Reads = polymerase_reads,
+          Polymerase_Read_Length = polymerase_readlength,
+          Polymerase_Read_N50 = polymerase_N50,
+          ##Subread_Length = subread_length,
+          ##Subread_N50 = subread_N50,
+          Insert_Length_subread_mean = longest_subread_mean,
+          Insert_N50 = longest_subread_N50
+          )
+
+          return(CCS_analysis_dict, adapter_dict,productivity_dict, loading_dict, control_dict, lengths_dict)
+
+        except ValueError: return False
 
     def write_result(self, dict, output):
        
@@ -336,8 +482,9 @@ if __name__ == '__main__':
     lengthsfile =  args[2]
     adapter =      args[3]
     control =      args[4]
-    output =       args[5]
-    name =         args[6]
+    metrics =      args[5]
+    output =       args[6]
+    name =         args[7]
     
     (subreads_dict, overview_dict) = SR.parse_subreadset_file(subreads, name)
     SR.write_result(subreads_dict, output + "_subreads.txt") 
@@ -359,3 +506,16 @@ if __name__ == '__main__':
     if control !="":
        control_dict = SR.parse_control_file(control, name)
        SR.write_result(control_dict, output + "_control.txt")
+
+    if metrics !="":
+         (CCS_analysis_dict, adapter_dict,productivity_dict, loading_dict, control_dict, lengths_dict) = SR.parse_metrics_file(metrics, name)
+         SR.write_result(CCS_analysis_dict, output + "_ccs_analysis.txt")
+         SR.write_result(adapter_dict, output + "_adapter.txt")
+         SR.write_result(control_dict, output + "_control.txt")
+         SR.write_result(lengths_dict, output + "_lengths.txt")
+         SR.write_result(productivity_dict, output + "_productivity.txt")
+         SR.write_result(loading_dict, output + "_loading.txt")
+
+
+
+
