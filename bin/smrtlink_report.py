@@ -397,7 +397,7 @@ class smrtlink_report(object):
                    longest_subread_N50 = line.strip().split(":")[1]
                if "Unique Molecular Yield" in line.strip():
                    unique_molecular_yield = line.strip().split(":")[1]
-
+                   unique_molecular_yield = int(line.strip().split(":")[1])/1000000000 ## convert to Gb
 
           CCS_analysis_dict = dict(
           Well = name,

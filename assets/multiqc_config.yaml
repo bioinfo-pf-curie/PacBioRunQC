@@ -52,9 +52,8 @@ custom_data:
                 format: '{:,.0f}'
                 scale: 'PuBu'
               Unique_Molecular_Yield:
-                title: 'Unique Molecular Yield'
+                title: 'Unique Molecular Yield (gb)'
                 format: '{:,.2f}'
-                suffix: ' Gb'
               Polymerase_Reads:
                 title: 'Polymerase Reads'
                 format: '{:,.0f}'
@@ -140,12 +139,12 @@ custom_data:
               Productive_ZMWs:
                 title: 'Productive ZMWs'
                 format: '{:,.0f}'
-                scale: 'PuBu'
                 description: 'productive ZMWs'
               Productivity_0:
                 title: 'Productivity 0'
                 description: 'empty ZMWs'
                 format: '{:,.0f}'
+                scale: 'PuBu'
               P0:
                 title: '%'
                 description: 'percentage empty ZMWs'
@@ -197,7 +196,7 @@ custom_data:
                 scale: 'PuBu'
                 description: 'HiFi Reads'
               HiFi_Yield:
-                title: 'HiFi Yield'
+                title: 'HiFi Yield (bp)'
                 format: '{:,.0f}'
                 description: 'HiFi Reads'
               HiFi_Read_Length_mean:
@@ -322,11 +321,11 @@ table_columns_placement:
     ccs_report:
        Well: 900
        HiFi_Reads: 910
-       HiFi_Yield: 930
-       HiFi_Read_Length_mean: 940
-       HiFi_Read_Quality_median: 950
-       HiFi_Number_of_Passes_mean: 960
-       Q20_Reads: 970
-       Q20_Yield: 980
-       Q20_Read_Length_mean: 990
-       Q20_Read_Quality_median: 1000
+       HiFi_Yield: 940
+       HiFi_Read_Length_mean: 960
+       HiFi_Read_Quality_median: 970
+       HiFi_Number_of_Passes_mean: 980
+       Q20_Reads: 990
+       Q20_Yield: 1000
+       Q20_Read_Length_mean: 1100
+       Q20_Read_Quality_median: 1200
