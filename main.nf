@@ -270,7 +270,7 @@ workflow.onComplete {
  * STEP 1 - RUN_QC
 */
 process subreads_reports {
-    label 'pacbiosmrtlink_sequel2'
+    label 'pacbiosmrtlink'
     tag "$name (raw)"
     publishDir "${params.outdir}/subreads_reports", mode: 'copy'
 

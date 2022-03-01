@@ -52,7 +52,7 @@ custom_data:
                 format: '{:,.0f}'
                 scale: 'PuBu'
               Unique_Molecular_Yield:
-                title: 'Unique Molecular Yield (gb)'
+                title: 'Unique Molecular Yield (Gb)'
                 format: '{:,.2f}'
               Polymerase_Reads:
                 title: 'Polymerase Reads'
@@ -182,7 +182,7 @@ custom_data:
     ccs_report:
         file_format: 'tsv'
         section_name: 'CCS Analysis Report'
-        description: 'productivity table.'
+        description: 'CCS Analysis table.'
         plot_type: 'table'
         pconfig:
             id: 'ccs_report'
@@ -210,19 +210,19 @@ custom_data:
                 description: 'HiFi Number of Passes (mean)'
                 format: '{:,.0f}'
               Q20_Reads:
-                title: 'Q20 Reads'
+                title: 'Reads Below Q20'
                 description: 'Q20 Reads'
                 format: '{:,.0f}'
               Q20_Yield:
-                title: 'Q20 Yield (bp)'
+                title: 'Yield (bp) Below Q20'
                 format: '{:,.0f}'
                 description: 'Q20 Yield'
               Q20_Read_Length_mean:
-                title: 'Q20 Read Length (mean,bp)'
+                title: 'Read Length (mean,bp) Below Q20'
                 description: 'Q20 Read Length (mean)'
                 format: '{:,.0f}'
               Q20_Read_Quality_median:
-                title: 'Q20 Read Quality (median)'
+                title: 'Read Quality (median) Below Q20'
                 description: 'Q20 Read Quality (median)'
                 format: '{:,.0f}'
 
@@ -320,12 +320,12 @@ table_columns_placement:
 
     ccs_report:
        Well: 900
-       HiFi_Reads: 910
-       HiFi_Yield: 940
-       HiFi_Read_Length_mean: 960
-       HiFi_Read_Quality_median: 970
-       HiFi_Number_of_Passes_mean: 980
-       Q20_Reads: 990
-       Q20_Yield: 1000
-       Q20_Read_Length_mean: 1100
-       Q20_Read_Quality_median: 1200
+       HiFi_Reads: 930
+       HiFi_Yield: 965
+       HiFi_Read_Length_mean: 980
+       HiFi_Read_Quality_median: 990
+       HiFi_Number_of_Passes_mean: 1000
+       Q20_Reads: 1100
+       Q20_Yield: 1200
+       Q20_Read_Length_mean: 1300
+       Q20_Read_Quality_median: 1400
