@@ -1,21 +1,20 @@
-%environment
-    export LC_ALL=C
-
 Bootstrap: docker
 From: centos:7.8.2003
 
 %environment
     export LC_ALL=C
-    export PATH=/smrtlink/smrtcmds/bin/:$PATH 
+    export PATH=/smrtlink/smrtcmds/bin/:$PATH
 %setup
 
     touch runqc-reports
-     
+
 %post
-    SMRTLINK_VERSION=10.1.0.119588 && \
-    yum install -y which rsync net-tools wget ImageMagick && \
-       yum clean all
-    wget http://isiserver.curie.fr/smrtlink/smrtlink_${SMRTLINK_VERSION}.run && \
-       sh smrtlink_*.run  --rootdir /smrtlink --smrttools-only && \
-       rm smrtlink_*.run
+
+    yum install -y which rsync net-tools wget ImageMagick unzip && \
+    yum clean all
+
+    wget https://downloads.pacbcloud.com/public/software/installers/smrtlink_11.0.0.146107.zip && \
+    unzip smrtlink_11.0.0.146107.zip
+    sh smrtlink_11.0.0.146107.run  --rootdir /smrtlink --smrttools-only && \
+    rm smrtlink_11.0.0.146107.run
     ln -sfn /smrtlink/smrtcmds/bin/python3 /usr/bin/python3
